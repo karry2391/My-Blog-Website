@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片放大功能</title>
+  <link rel="stylesheet" href="CSS/life.css">
+</head>
+<body>
+	<!-- 导航栏 -->
+	<nav class="navbar">
+	    <div class="logo">KaiHub</div>
+	    <ul class="nav-links">
+	        <li><a href="index.html">首页</a></li>
+			<li><a href="life.html">生活</a></li>
+			<li><a href="Music.html">音乐</a></li>
+			<li><a href="technology.html">技术</a></li>
+			<li><a href="tutorial.html">教程</a></li>
+	        <li><a href="archive.html">归档</a></li>
+	        <li><a href="about.html">关于</a></li>
+			<li><a href="login.html">登录</a></li>
+	    </ul>
+		<div class="search-bar">
+			<input type="text" placeholder="搜索问题、话题">
+		</div>
+	    <div class="toggle-theme" onclick="toggleTheme()">
+	        <span id="theme-icon">🌑</span>
+	    </div>
+	</nav>
+  
+	<!-- 红色区域 -->
+	<div class="hero-section">
+		<div class="content">
+		  <h1>发现并分享世界上最好的照片</h1>
+		  <p>从世界各地不同风格和流派的令人难以置信的照片中获取灵感。</p>
+		</div>
+		<div class="image-section">
+		  <img src="Image/Life/index.png" alt="Header Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+	</div>
+
+	<!-- 图片区域 -->
+	<div class="split-section">
+		<div class="left-section">
+		  <img src="Image/Life/1.png" alt="Section 1 Left Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+		<div class="right-section">
+		  <img src="Image/Life/2.png" alt="Section 1 Right Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+	</div>
+	<!-- 第二行分割区域 -->
+	<div class="split-section">
+		<div class="left-section">
+		  <img src="Image/Life/3.jpg" alt="Section 2 Left Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+		<div class="right-section">
+		  <img src="Image/Life/4.jpg" alt="Section 2 Right Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+	</div>
+	<!-- 第三行分割区域 -->
+	<div class="split-section">
+		<div class="left-section">
+		  <img src="Image/Life/5.jpg" alt="Section 3 Left Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+		<div class="right-section">
+		  <img src="Image/Life/6.png" alt="Section 3 Right Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+	</div>
+	<!-- 第四行分割区域 -->
+	<div class="split-section">
+		<div class="left-section">
+		  <img src="Image/Life/7.jpg" alt="Section 4 Left Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+		<div class="right-section">
+		  <img src="Image/Life/8.png" alt="Section 4 Right Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+	</div>
+	<!-- 第五行分割区域 -->
+	<div class="split-section">
+		<div class="left-section">
+		  <img src="Image/Life/9.png" alt="Section 5 Left Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+		<div class="right-section">
+		  <img src="Image/Life/10.jpg" alt="Section 5 Right Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+	</div>
+	<!-- 第六行分割区域 -->
+	<div class="split-section">
+		<div class="left-section">
+		  <img src="Image/Life/11.jpg" alt="Section 5 Left Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+		<div class="right-section">
+		  <img src="Image/Life/12.jpg" alt="Section 5 Right Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+	</div>
+	<!-- 第七行分割区域 -->
+	<div class="split-section">
+		<div class="left-section">
+		  <img src="Image/Life/13.jpg" alt="Section 5 Left Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+		<div class="right-section">
+		  <img src="Image/Life/14.jpg" alt="Section 5 Right Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+	</div>
+	<!-- 第八行分割区域 -->
+	<div class="split-section">
+		<div class="left-section">
+		  <img src="Image/Life/15.jpg" alt="Section 5 Left Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+		<div class="right-section">
+		  <img src="Image/Life/16.jpg" alt="Section 5 Right Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+	</div>
+	<!-- 第九行分割区域 -->
+	<div class="split-section">
+		<div class="left-section">
+		  <img src="Image/Life/17.jpg" alt="Section 5 Left Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+		<div class="right-section">
+		  <img src="Image/Life/18.jpg" alt="Section 5 Right Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+	</div>
+	<!-- 第十行分割区域 -->
+	<div class="split-section">
+		<div class="left-section">
+		  <img src="Image/Life/19.jpg" alt="Section 5 Left Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+		<div class="right-section">
+		  <img src="Image/Life/20.jpg" alt="Section 5 Right Image" class="split-image" onclick="toggleZoom(this)">
+		</div>
+	</div>
+
+	<!-- 背景遮罩 -->
+	<div class="zoom-overlay" onclick="closeZoom()"></div>
+
+<script src="JS/life.js"></script>
+</body>
+</html>

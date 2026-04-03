@@ -1,0 +1,318 @@
+/* 代码容器样式 */
+.code-container {
+    background: var(--section-bg);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);  /* 添加柔和的阴影 */
+    transition: box-shadow 0.3s ease;  /* 添加阴影过渡效果 */
+}
+
+/* 鼠标悬停时增强阴影效果 */
+.code-container:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* 白色主题下的特殊样式 */
+:root[data-theme="light"] .code-container {
+    border: 1px solid #eaeaea;  /* 添加浅色边框 */
+    background: #ffffff;  /* 确保背景为白色 */
+}
+
+/* 深色主题下的特殊样式 */
+:root[data-theme="dark"] .code-container {
+    box-shadow: none;  /* 移除阴影 */
+    border: 1px solid var(--border-color);  /* 使用深色主题的边框颜色 */
+}
+
+.code-header {
+	display: flex;
+	align-items: center;
+	margin-bottom: 15px;
+	color: #666;
+	font-size: 14px;
+}
+
+.code-dots {
+	display: flex;
+	gap: 8px;
+	margin-right: 15px;
+}
+
+.dot {
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+}
+
+.dot-red { background-color: #ff5f56; }
+.dot-yellow { background-color: #ffbd2e; }
+.dot-green { background-color: #27c93f; }
+
+.code-title {
+	color: var(--text-color);
+}
+
+.code-content {
+	font-size: 15px;
+	line-height: 1.6;
+}
+
+.string { color: #98c379; }
+.key { color: #e06c75; }
+.punctuation { color: #abb2bf; }
+
+.code-container pre {
+	margin: 0;
+	white-space: pre-wrap;
+}
+
+/* 内容区样式 */
+.main-content {
+	max-width: 1200px;
+	margin: 40px auto;
+	padding: 0 20px;
+}
+
+/* 故事部分样式 */
+.story-section {
+    margin: 20px 0;
+    padding: 20px;
+    background: var(--section-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.story-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="light"] .story-section {
+    border: 1px solid #eaeaea;
+    background: #ffffff;
+}
+
+:root[data-theme="dark"] .story-section {
+    box-shadow: none;
+    border: 1px solid var(--border-color);
+}
+
+.story-section {
+	margin: 20px 0;
+	padding: 20px;
+	background: var(--text-color)var(--text-color);
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.story-section h3 {
+	color: var(--text-color);
+	margin-bottom: 15px;
+}
+
+.story-section p {
+	margin-bottom: 15px;
+	color: var(--text-color);
+}
+
+.tech-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-top: 10px;
+}
+
+/* 技术标签样式 */
+.tech-tag {
+    background: var(--section-bg);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: var(--text-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.tech-tag:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="light"] .tech-tag {
+    border: 1px solid #eaeaea;
+    background: #ffffff;
+}
+
+:root[data-theme="dark"] .tech-tag {
+    box-shadow: none;
+    border: 1px solid var(--border-color);
+}
+
+.emoji-image {
+    max-width: 420px;    /* 限制图片的最大宽度为 300px */
+    width: 100%;         /* 图片宽度为容器的 100%，可以自适应 */
+    height: auto;        /* 图片高度自动调整，保持原始宽高比例 */
+    margin: 20px 0;      /* 上下外边距为 20px，左右外边距为 0 */
+    border-radius: 10px;  /* 图片的圆角半径为 8px，设置图片的圆角效果 */
+}
+
+/* 时间戳样式 */
+.timestamp {
+	color: var(--text-muted);
+	font-size: 16px;
+	margin-top: 10px;
+	font-style: italic;  /* 斜体 */
+}
+
+/* 悬停效果 */
+.timestamp:hover {
+    color: #333;  /* 鼠标悬停时变深 */
+}
+
+/* 为时间戳添加小图标 */
+.timestamp::before {
+    content: "🕒";  /* 时钟emoji */
+    margin-right: 5px;  /* 图标和文字之间的间距 */
+}
+
+/* 评论区部分样式 */
+.comment-section {
+    margin-top: 40px;
+    padding: 20px;
+    background: var(--section-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.comment-section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="light"] .comment-section {
+    border: 1px solid #eaeaea;
+    background: #ffffff;
+}
+
+:root[data-theme="dark"] .comment-section {
+    box-shadow: none;
+    border: 1px solid var(--border-color);
+}
+
+.comment-section h3 {
+	margin-bottom: 20px;
+	color: var(--text-color);
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.comment-form textarea {
+	width: 730px;
+	height: 100px;
+	margin-bottom: 15px;
+	padding: 15px;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	resize: none;
+}
+
+.comment-form button {
+	padding: 10px 20px;
+	background: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 8px;
+	font-size: 14px;
+	cursor: pointer;
+	transition: background 0.3s;
+}
+
+.comment-form button:hover {
+	background: #0056b3;
+}
+
+.comment-list {
+	margin-top: 20px;
+}
+
+/* 评论项样式 */
+.comment-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--section-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.comment-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="light"] .comment-item {
+    border: 1px solid #eaeaea;
+    background: #ffffff;
+}
+
+:root[data-theme="dark"] .comment-item {
+    box-shadow: none;
+    border: 1px solid var(--border-color);
+}
+
+.comment-header {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.comment-avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+/* 评论文本框样式更新 */
+.comment-form textarea {
+    width: 1126px;
+    height: 100px;
+    margin-bottom: 15px;
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    resize: none;
+    background: var(--section-bg);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.comment-form textarea:focus {
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+.comment-username {
+	font-weight: bold;
+	color: var(--text-color);
+	font-size: 14px;
+}
+
+.comment-time {
+	font-size: 12px;
+	color: var(--text-muted);
+	margin-left: 5px;
+}
+
+.comment-content {
+	margin-top: 5px;
+	color: var(--text-color);
+	font-size: 14px;
+	line-height: 1.6;
+}

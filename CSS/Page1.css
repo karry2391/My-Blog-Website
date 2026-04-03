@@ -1,0 +1,29 @@
+/* 全局样式 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+/* 错误容器样式 */
+.error-container {
+    padding-top: 200px;  /* 调整顶部间距 */
+    text-align: center;
+}
+
+/* 404数字样式 */
+h1 {
+    font-size: 160px;
+    font-weight: bold;
+    margin: 0;
+    color: #000000;
+}
+
+/* 文字样式 */
+p {
+    font-size: 32px;
+    margin: 0;
+    color: #000000;
+    margin-top: -20px;  /* 调整与404的间距 */
+}

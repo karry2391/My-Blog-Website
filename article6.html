@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章详情 - KaiHub</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/article.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">KaiHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+    		<li><a href="life.html">生活</a></li>
+    		<li><a href="Music.html">音乐</a></li>
+    		<li><a href="technology.html">技术</a></li>
+    		<li><a href="tutorial.html">教程</a></li>
+            <li><a href="archive.html">归档</a></li>
+            <li><a href="about.html">关于</a></li>
+    		<li><a href="login.html">登录</a></li>
+        </ul>
+    	<div class="search-bar">
+    		<input type="text" placeholder="搜索问题、话题">
+    	</div>
+        <div class="toggle-theme" onclick="toggleTheme()">
+            <span id="theme-icon">🌑</span>
+        </div>
+    </nav>
+
+    <!-- 文章详情容器 -->
+    <div class="article-detail-container">
+        <!-- 返回按钮 -->
+        <div class="back-button" onclick="history.back()">
+            <i class="fas fa-arrow-left"></i> 返回
+        </div>
+
+        <!-- 文章主体 -->
+        <article class="article-detail">
+            <h1 class="article-title">钟馗之眼（Eye of Zhongkui）—— 渗透测试与安全分析利器</h1>
+            <div class="article-meta">
+                <span class="article-date">发布时间：2024-12-2</span>
+                <div class="article-author">
+                    <img src="Image/Article/T6.jpg" alt="作者头像" class="author-avatar">
+                    <span class="author-name">哄哄</span>
+                </div>
+            </div>
+            <div class="article-cover">
+                <img src="Image/Article/Zhongkui.jpg" alt="文章封面" class="cover-image">
+            </div>
+            <div class="article-content">
+                <h2>概述</h2>
+                <p>钟馗之眼（Eye of Zhongkui）是一款基于 Kali Linux 的渗透测试工具，广泛应用于信息安全分析和网络安全评估中。作为一款开源工具，钟馗之眼结合了多个安全技术和工具，旨在帮助渗透测试人员和安全研究人员高效地扫描目标系统，发现潜在的安全漏洞和风险。</p>
+                
+                <h2>主要功能</h2>
+                <p>钟馗之眼主要提供以下功能：</p>
+                <ul>
+                    <li><strong>漏洞扫描</strong>：自动化扫描目标网络或系统中的已知漏洞，帮助用户快速识别系统的脆弱点。</li>
+                    <li><strong>信息收集</strong>：通过多种信息收集工具，获取目标的网络、系统以及应用层的相关信息，包括域名、IP 地址、操作系统版本等。</li>
+                    <li><strong>安全审计</strong>：对目标网络进行全面的安全审计，检查是否符合安全标准，并生成详细的报告。</li>
+                    <li><strong>弱点分析</strong>：通过深入分析目标的配置和服务，发现潜在的安全漏洞，如不安全的端口、弱口令、未打补丁的漏洞等。</li>
+                </ul>
+        
+                <h2>应用场景</h2>
+                <p>钟馗之眼作为一个网络安全工具，适用于以下场景：</p>
+                <ul>
+                    <li><strong>渗透测试</strong>：帮助渗透测试人员在进行模拟攻击时，评估目标系统的安全性，发现潜在的漏洞和风险。</li>
+                    <li><strong>网络安全审计</strong>：安全团队可以利用钟馗之眼进行自查，评估企业内部网络和系统的安全状况。</li>
+                    <li><strong>漏洞管理</strong>：帮助安全研究人员在进行漏洞管理时，快速识别系统中的弱点，提出修复建议。</li>
+                    <li><strong>安全教育与培训</strong>：作为教学工具，钟馗之眼也适用于网络安全培训，帮助学员了解渗透测试的基本方法和工具使用。</li>
+                </ul>
+        
+                <h2>如何使用钟馗之眼</h2>
+                <p>使用钟馗之眼非常简单，以下是基本的使用步骤：</p>
+                <ol>
+                    <li>首先，在 Kali Linux 系统中安装并配置钟馗之眼工具。</li>
+                    <li>启动工具后，选择目标系统或网络进行扫描。</li>
+                    <li>根据扫描结果，进行进一步的漏洞分析和信息收集。</li>
+                    <li>最终生成报告并提供修复建议，帮助用户增强系统安全性。</li>
+                </ol>
+        
+                <h2>总结</h2>
+                <p>钟馗之眼（Eye of Zhongkui）是一款功能强大的渗透测试工具，凭借其高效的信息收集和漏洞扫描能力，成为信息安全行业中不可或缺的一部分。它不仅适用于渗透测试人员，也适合任何需要进行网络安全审计、漏洞分析和系统评估的安全研究人员。通过这款工具，用户可以更加全面地了解目标系统的安全状况，为网络安全防护提供有力支持。</p>
+            </div>
+        
+            <!-- 点赞和分享区域 -->
+            <div class="article-actions">
+                <button class="like-button" onclick="handleLike()">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span class="like-count">0</span>
+                </button>
+                <button class="share-button" onclick="handleShare()">
+                    <i class="fas fa-share"></i> 分享
+                </button>
+            </div>
+        
+            <!-- 评论区 -->
+            <div class="comments-section">
+                <h3>评论区</h3>
+                <div class="comment-form">
+                    <textarea placeholder="写下你的评论..."></textarea>
+                    <button onclick="submitComment()">发表评论</button>
+                </div>
+                <div class="comments-list">
+                    <!-- 评论列表 -->
+                </div>
+            </div>
+        </article>
+
+        <!-- 相关文章推荐 -->
+        <div class="related-articles">
+            <h3>🚀 2024年11月 GitHub 十大热门项目排行榜 🔥</h3>
+            <div class="related-articles-list">
+        		<a href="https://github.com/Skyvern-AI/skyvern">1.Skyvern-AI / Skyvern</a>
+        		<a href="https://github.com/anthropics/courses">2.Anthropics / Courses</a>
+        		<a href="https://github.com/abi/screenshot-to-code">3.Abi / Screenshot-to-Code</a>
+        		<a href="https://github.com/dgtlmoon/changedetection.io">4.Dgtlmoon / Changedetection.io</a>
+        		<a href="https://github.com/paperless-ngx/paperless-ngx">5.Paperless-ngx / Paperless-ngx</a>
+        		<a href="https://github.com/bluesky-social/social-app">6.Bluesky-social / Social-app</a>
+        		<a href="https://github.com/ToolJet/ToolJet">7.ToolJet / ToolJet</a>
+        		<a href="https://github.com/meta-llama/llama-recipes">8.Meta-llama / Llama-recipes</a>
+        		<a href="https://github.com/yamadashy/repomix">9.Yamadashy / Repomix</a>
+        		<a href="https://github.com/PowerShell/PowerShell">10.PowerShell / PowerShell</a>
+            </div>
+        	<h3>🌟 必看：2024年编程学习资源推荐 📘</h3>
+        	<div class="related-articles-list">
+        		<a href="https://github.com/EbookFoundation/free-programming-books">1. EbookFoundation / Free-programming-books</a>
+        		<a href="https://github.com/ossu/computer-science">2. OSSU / Computer-science</a>
+        		<a href="https://github.com/danistefanovic/build-your-own-x">3. Danistefanovic / Build-your-own-X</a>
+        		<a href="https://github.com/theodinproject/curriculum">4. The Odin Project / Curriculum</a>
+        		<a href="https://github.com/getify/You-Dont-Know-JS">5. Getify / You-Don’t-Know-JS</a>
+        	</div>
+        
+        	<h3>💡 最新AI工具与框架推荐 🤖</h3>
+        	<div class="related-articles-list">
+        		<a href="https://github.com/huggingface/transformers">1. HuggingFace / Transformers</a>
+        		<a href="https://github.com/google/jax">2. Google / Jax</a>
+        		<a href="https://github.com/ultralytics/ultralytics">3. Ultralytics / YOLOv8</a>
+        		<a href="https://github.com/karpathy/nn-zero-to-hero">4. Karpathy / NN-zero-to-hero</a>
+        		<a href="https://github.com/CompVis/stable-diffusion">5. CompVis / Stable-diffusion</a>
+        	</div>
+        
+        	<h3>🛠️ 优秀开源工具与实用软件 🔧</h3>
+        	<div class="related-articles-list">
+        		<a href="https://github.com/qbittorrent/qBittorrent">1. QBittorrent / qBittorrent</a>
+        		<a href="https://github.com/obsidianmd/obsidian-releases">2. ObsidianMD / Obsidian</a>
+        		<a href="https://github.com/Flameshot-org/flameshot">3. Flameshot-org / Flameshot</a>
+        		<a href="https://github.com/micropython/micropython">4. Micropython / Micropython</a>
+        		<a href="https://github.com/tmux/tmux">5. Tmux / Tmux</a>
+        	</div>
+        </div>
+    </div>
+
+    <script src="JS/index.js"></script>
+    <script src="JS/article.js"></script>
+</body>
+</html>

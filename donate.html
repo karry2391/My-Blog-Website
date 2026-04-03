@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>感谢您的支持 - 打赏</title>
+	<style>
+		/* 通用样式 */
+		* {
+		    margin: 0;
+		    padding: 0;
+		    box-sizing: border-box;
+		}
+		
+		body {
+		    font-family: Arial, sans-serif;
+		    background-color: #f4f4f4;
+		    color: #333;
+		    line-height: 1.6;
+		}
+		
+		/* 容器样式 */
+		.donate-container {
+		    max-width: 900px;
+		    margin: 50px auto;
+		    padding: 30px;
+		    background-color: white;
+		    border-radius: 10px;
+		    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+		    text-align: center;
+		}
+		
+		/* 标题样式 */
+		h1 {
+		    font-size: 36px;
+		    color: #2196F3;
+		    margin-bottom: 20px;
+		}
+		
+		h2 {
+		    font-size: 24px;
+		    color: #333;
+		    margin-bottom: 10px;
+		}
+		
+		/* 打赏二维码 */
+		.donate-methods {
+		    display: flex;
+		    justify-content: space-around;
+		    flex-wrap: wrap;
+		    gap: 30px;
+		}
+		
+		.donate-method {
+		    background-color: #f9f9f9;
+		    border-radius: 10px;
+		    padding: 20px;
+		    width: 350px;
+		    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		}
+		
+		.qr-code {
+		    width: 300px;
+		    height: 300px;
+		    margin: 20px 0;
+		    object-fit: contain;
+		    border: 2px solid #ddd;
+		    border-radius: 5px;
+		}
+		
+		footer {
+		    margin-top: 40px;
+		    font-size: 16px;
+		    color: #999;
+		}
+		
+		footer p {
+		    margin-top: 10px;
+		}
+		
+	</style>
+</head>
+<body>
+    <div class="donate-container">
+        <h1>感谢您的支持！</h1>
+        <p>如果您觉得我的内容对您有帮助，可以通过以下方式打赏支持我，感谢您的鼓励！</p>
+
+        <div class="donate-methods">
+            <div class="donate-method">
+                <h2>支付宝</h2>
+                <img src="Image/alipay.png" alt="支付宝二维码" class="qr-code">
+                <p>扫描二维码，支持我一杯咖啡！</p>
+            </div>
+
+            <div class="donate-method">
+                <h2>微信</h2>
+                <img src="Image/wechat.jpg" alt="微信二维码" class="qr-code">
+                <p>扫描二维码，支持我一下！</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>感谢您的支持与关注！</p>
+        </footer>
+    </div>
+</body>
+</html>

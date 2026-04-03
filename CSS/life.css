@@ -1,0 +1,215 @@
+/* 定义全局主题变量：浅色模式 */
+:root {
+    --bg-color: #ffffff;            /* 背景色 */
+    --text-color: #000000;          /* 文本色 */
+    --nav-bg-color: #ffffff;        /* 导航栏背景色 */
+    --nav-border-color: #e5e5e5;    /* 导航栏边框色 */
+    --hover-color: #555;            /* 悬停色 */
+    --dropdown-bg: #ffffff;         /* 下拉菜单背景色 */
+    --border-color: #e5e5e5;        /* 边框色 */
+    --section-bg: #f9f9f9;          /* 区块背景色 */
+    --hero-bg: #ff0000;             /* 红色区域背景色 */
+    --hero-text: #ffffff;           /* 红色区域文本色 */
+    --overlay-bg: rgba(0, 0, 0, 0.5); /* 遮罩层背景色 */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* 阴影色 */
+    --split-border: #eee;           /* 分割区域边框色 */
+}
+
+/* 定义全局主题变量：深色模式 */
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --nav-bg-color: #1e1e1e;
+    --nav-border-color: #333333;
+    --hover-color: #bbbbbb;
+    --dropdown-bg: #1e1e1e;
+    --border-color: #333333;
+    --section-bg: #1e1e1e;
+    --hero-bg: #8b0000;             /* 深色模式下的红色区域 */
+    --hero-text: #ffffff;
+    --overlay-bg: rgba(0, 0, 0, 0.7);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --split-border: #333;
+}
+
+/* 页面全局样式 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+/* 导航栏样式 */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--nav-bg-color);
+    border-bottom: 1px solid var(--nav-border-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.nav-links li a:hover {
+    color: var(--hover-color);
+}
+
+/* 下拉菜单样式 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--dropdown-bg);
+    border: 1px solid var(--nav-border-color);
+    box-shadow: 0 2px 4px var(--shadow-color);
+    list-style: none;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.dropdown-menu li {
+    padding: 5px 20px;
+    white-space: nowrap;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* 主题切换按钮样式 */
+.toggle-theme {
+    cursor: pointer;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+/* 搜索栏样式 */
+.search-bar {
+    flex-grow: 1;
+    max-width: 300px;
+    margin: 0 -240px;
+    justify-content: flex-end;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    font-size: 16px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* 红色区域样式 */
+.hero-section {
+    background-color: var(--hero-bg);
+    color: var(--hero-text);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+/* 内容区样式 */
+.content {
+    max-width: 50%;
+}
+
+/* 图片分割区域的样式 */
+.split-section {
+    display: flex;
+    height: 550px;
+    border-bottom: 1px solid var(--split-border);
+    background-color: var(--bg-color);
+    transition: all 0.3s ease;
+}
+
+.split-section:last-child {
+    border-bottom: none;
+}
+
+/* 左右两侧区域的样式 */
+.left-section, .right-section {
+    flex: 1;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	position: relative;
+	overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* 图片样式 */
+.split-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* 图片放大后的样式 */
+.split-image.zoomed {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 98vw;
+    height: 98vh;
+    object-fit: contain;
+    z-index: 1000;
+    box-shadow: 0 8px 16px var(--shadow-color);
+    max-width: none;
+}
+
+/* 图片放大的背景遮罩层样式 */
+.zoom-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--overlay-bg);
+    z-index: 999;
+    display: none;
+    transition: background-color 0.3s ease;
+}
+
+/* 激活遮罩层时显示 */
+.zoom-overlay.active {
+    display: block;
+}

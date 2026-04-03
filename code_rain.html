@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑客入侵</title>
+    <style>
+        /* 重置样式 */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        html {
+            overflow: hidden;
+        }
+
+        body {
+            background-color: #111;
+        }
+
+        /* 设置canvas样式 */
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script type="text/javascript">
+        window.onload = function() {
+            // 获取画布对象
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+
+            // 获取浏览器屏幕的宽度和高度
+            var W = window.innerWidth;
+            var H = window.innerHeight;
+
+            // 设置canvas的宽度和高度
+            canvas.width = W;
+            canvas.height = H;
+
+            // 每个文字的字体大小
+            var fontSize = 16;
+
+            // 计算列数
+            var columns = Math.floor(W / fontSize);
+
+            // 记录每列文字的y轴坐标
+            var drops = [];
+
+            // 给每个文字初始化一个起始点的位置
+            for (var i = 0; i < columns; i++) {
+                drops.push(0);
+            }
+
+            // 运动的文字
+			var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            // 绘制函数
+            function draw() {
+                // 清空画布背景，使其呈现动态效果
+                context.fillStyle = "rgba(0,0,0,0.05)";
+                context.fillRect(0, 0, W, H);
+
+                // 设置字体样式
+                context.font = "700 " + fontSize + "px 微软雅黑";
+                context.fillStyle = "#3b99fc";  // 字体颜色
+
+                // 绘制每一列文字
+                for (var i = 0; i < columns; i++) {
+                    var index = Math.floor(Math.random() * str.length);
+                    var x = i * fontSize;
+                    var y = drops[i] * fontSize;
+                    context.fillText(str[index], x, y);
+
+                    // 如果文字到了画布底部，重新开始
+                    if (y >= canvas.height && Math.random() > 0.99) {
+                        drops[i] = 0;
+                    }
+
+                    // 更新y轴坐标
+                    drops[i]++;
+                }
+            }
+
+            // 启动绘制循环
+            draw();
+            setInterval(draw, 30);
+        };
+    </script>
+</body>
+</html>

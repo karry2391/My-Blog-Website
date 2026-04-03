@@ -1,0 +1,139 @@
+/* 认证页面容器 */
+.auth-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 60px);
+    background-color: var(--bg-color);
+	background-image: url('../Image/login.jpg'); /* 请替换为你的图片路径 */
+	background-size: cover; /* 背景图片覆盖整个容器 */
+	background-position: center; /* 背景居中显示 */
+	background-repeat: no-repeat; /* 防止背景重复 */
+    padding: 20px;
+}
+
+/* 认证表单 */
+.auth-form {
+    background-color: rgba(255, 255, 255, 0); /* 保持透明背景色 */
+    border-radius: 10px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.auth-form h2 {
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+/* 表单组件 */
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--primary-color-light);
+}
+
+/* 记住我选项 */
+.remember-me {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+}
+
+.remember-me input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+/* 提交按钮 */
+.auth-button {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+/* 链接样式 */
+.auth-links {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: white;
+}
+
+.auth-links a {
+    color: gold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.auth-links a:hover {
+    color: var(--primary-color-dark);
+}
+
+/* 快捷键提示 */
+.auth-shortcuts {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 12px;
+    color: white;
+}
+
+/* 页脚 */
+.auth-footer {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    font-size: 16px;
+}
+
+/* 主题变量 */
+:root {
+    --primary-color: #5cd9c1;
+    --primary-color-dark: #3ab89e;
+    --primary-color-light: rgba(92, 217, 193, 0.2);
+    --section-bg: #ffffff;
+    --border-color: #e0e0e0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --text-muted: #666666;
+}
+
+[data-theme="dark"] {
+    --primary-color: #5cd9c1;
+    --primary-color-dark: #3ab89e;
+    --primary-color-light: rgba(92, 217, 193, 0.2);
+    --section-bg: #2b3035;
+    --border-color: #404040;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --text-muted: #888888;
+}

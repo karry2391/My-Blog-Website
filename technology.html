@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>技术 - KaiHub</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/category.css">
+	<link rel="stylesheet" href="CSS/technology.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">KaiHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+    		<li><a href="life.html">生活</a></li>
+    		<li><a href="Music.html">音乐</a></li>
+    		<li><a href="technology.html">技术</a></li>
+    		<li><a href="tutorial.html">教程</a></li>
+            <li><a href="archive.html">归档</a></li>
+            <li><a href="about.html">关于</a></li>
+    		<li><a href="login.html">登录</a></li>
+        </ul>
+    	<div class="search-bar">
+    		<input type="text" placeholder="搜索问题、话题">
+    	</div>
+        <div class="toggle-theme" onclick="toggleTheme()">
+            <span id="theme-icon">🌑</span>
+        </div>
+    </nav>
+
+    <!-- 主内容区域 -->
+    <div class="category-container">
+        <!-- 类别标题 -->
+        <div class="category-header">
+            <h1>技术文章</h1>
+            <p>分享各类技术见解与经验</p>
+        </div>
+
+        <!-- 技术领域展示 -->
+        <div class="tech-showcase">
+            <div class="showcase-item" data-category="frontend">
+                <div class="showcase-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <h3>前端开发</h3>
+                <p>15 篇文章</p>
+            </div>
+            <div class="showcase-item" data-category="backend">
+                <div class="showcase-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>后端开发</h3>
+                <p>12 篇文章</p>
+            </div>
+			<div class="showcase-item" data-category="frontend">
+			    <div class="showcase-icon">
+			        <i class="fas fa-robot"></i>
+			    </div>
+			    <h3>人工智能</h3>
+			    <p>10 篇文章</p>
+			</div>
+			<div class="showcase-item" data-category="backend">
+			    <div class="showcase-icon">
+			        <i class="fas fa-chart-bar"></i>
+			    </div>
+			    <h3>数据库管理</h3>
+			    <p>7 篇文章</p>
+			</div>
+            <!-- 更多技术领域... -->
+        </div>
+
+        <!-- 技术分类标签 -->
+        <div class="tech-tags">
+            <button class="tag active" data-type="all">全部</button>
+            <button class="tag" data-type="frontend">前端</button>
+            <button class="tag" data-type="backend">后端</button>
+            <button class="tag" data-type="python">Python</button>
+            <button class="tag" data-type="javascript">JavaScript</button>
+            <button class="tag" data-type="database">数据库</button>
+        </div>
+
+        <!-- 文章网格 -->
+        <div class="article-grid">
+            <!-- 文章卡片 -->
+            <article class="article-card" data-type="javascript">
+                <div class="card-image">
+                    <img src="Image/technology/1.jpg" alt="技术文章配图">
+                    <div class="image-overlay">
+                        <span class="read-time">阅读时间: 15分钟</span>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="card-tags">
+                        <span class="tech-badge javascript">JavaScript</span>
+                        <span class="difficulty medium">中级</span>
+                    </div>
+                    <h2>深入理解JavaScript原型链</h2>
+                    <p>本文将深入探讨JavaScript中原型链的概念、工作原理以及实际应用场景。你将学习原型链如何决定对象的属性和方法的继承路径，以及如何通过原型链来实现继承和方法共享。</p>
+                    <p>文章还将介绍如何通过`Object.create()`创建一个新的对象，并让它继承某个对象的原型；以及如何使用`prototype`修改构造函数的原型对象。</p>
+                    <p>此外，我们将讨论原型链的性能问题，并为你提供优化建议，以帮助你写出高效、可维护的JavaScript代码。</p>
+                    <div class="card-meta">
+                        <div class="author-info">
+                            <img src="Image/technology/T1.jpg" alt="作者头像">
+                            <span>Autumn</span>
+                        </div>
+                        <div class="article-stats">
+                            <span title="阅读量"><i class="fas fa-eye"></i> 1.2k</span>
+                            <span title="点赞数"><i class="fas fa-heart"></i> 326</span>
+                            <span title="评论数"><i class="fas fa-comment"></i> 28</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-hover">
+                    <div class="hover-content">
+                        <h3>文章亮点</h3>
+                        <ul>
+                            <li>原型链基础概念解析</li>
+                            <li>继承机制详解</li>
+                            <li>实际应用案例</li>
+                        </ul>
+                        <button class="read-more-btn">阅读全文</button>
+                    </div>
+                </div>
+            </article>
+			<article class="article-card" data-type="javascript">
+			    <div class="card-image">
+			        <img src="Image/technology/2.jpg" alt="技术文章配图">
+			        <div class="image-overlay">
+			            <span class="read-time">阅读时间: 12分钟</span>
+			        </div>
+			    </div>
+			    <div class="card-content">
+			        <div class="card-tags">
+			            <span class="tech-badge javascript">Python</span>
+			            <span class="difficulty medium">中级</span>
+			        </div>
+			        <h2>深入理解Python装饰器</h2>
+			        <p>本文将深入探讨Python装饰器的基本概念、使用方法和实际应用案例。你将学习如何利用装饰器来修改函数或方法的行为，以及如何编写自定义装饰器来简化代码。</p>
+			        <p>我们将讨论装饰器的工作原理，特别是它如何利用闭包机制来捕获函数的执行环境。你将学到如何在不修改原始代码的情况下添加额外的功能。</p>
+			        <p>文章还将介绍装饰器在Web框架中的实际应用，比如Flask和Django中如何使用装饰器来处理路由、权限验证等。</p>
+			        <div class="card-meta">
+			            <div class="author-info">
+			                <img src="Image/technology/T2.jpg" alt="作者头像">
+			                <span>库玻</span>
+			            </div>
+			            <div class="article-stats">
+			                <span title="阅读量"><i class="fas fa-eye"></i> 1.5k</span>
+			                <span title="点赞数"><i class="fas fa-heart"></i> 220</span>
+			                <span title="评论数"><i class="fas fa-comment"></i> 15</span>
+			            </div>
+			        </div>
+			    </div>
+			    <div class="card-hover">
+			        <div class="hover-content">
+			            <h3>文章亮点</h3>
+			            <ul>
+			                <li>装饰器的基本语法与用法</li>
+			                <li>装饰器在Web框架中的应用</li>
+			                <li>提升代码可读性的最佳实践</li>
+			            </ul>
+			            <button class="read-more-btn">阅读全文</button>
+			        </div>
+			    </div>
+			</article>
+			<article class="article-card" data-type="javascript">
+			    <div class="card-image">
+			        <img src="Image/technology/3.png" alt="技术文章配图">
+			        <div class="image-overlay">
+			            <span class="read-time">阅读时间: 25分钟</span>
+			        </div>
+			    </div>
+			    <div class="card-content">
+			        <div class="card-tags">
+			            <span class="tech-badge javascript">C++</span>
+			            <span class="difficulty medium">高级</span>
+			        </div>
+			        <h2>深入理解C++多态性</h2>
+			        <p>本文将详细讲解C++中的多态性概念，涵盖静态多态（函数重载、运算符重载）与动态多态（虚函数、纯虚函数）的区别与实现。你将了解如何在继承体系中通过多态机制实现方法的动态绑定。</p>
+			        <p>我们将讨论如何通过虚函数和虚继承来实现多态，以及如何在C++中利用抽象类和接口来定义多态行为。</p>
+			        <p>此外，文章还将通过实际的设计模式案例，展示多态性在C++程序设计中的重要应用，帮助你编写更灵活、可扩展的代码。</p>
+			        <div class="card-meta">
+			            <div class="author-info">
+			                <img src="Image/technology/T3.jpg" alt="作者头像">
+			                <span>芋泥啵啵</span>
+			            </div>
+			            <div class="article-stats">
+			                <span title="阅读量"><i class="fas fa-eye"></i> 3.0k</span>
+			                <span title="点赞数"><i class="fas fa-heart"></i> 500</span>
+			                <span title="评论数"><i class="fas fa-comment"></i> 45</span>
+			            </div>
+			        </div>
+			    </div>
+			    <div class="card-hover">
+			        <div class="hover-content">
+			            <h3>文章亮点</h3>
+			            <ul>
+			                <li>原型链基础概念解析</li>
+			                <li>继承机制详解</li>
+			                <li>实际应用案例</li>
+			            </ul>
+			            <button class="read-more-btn">阅读全文</button>
+			        </div>
+			    </div>
+			</article>
+
+            <!-- 更多文章卡片... -->
+        </div>
+
+        <!-- 技术图谱 -->
+        <div class="tech-map">
+            <h2>技术知识图谱</h2>
+            <div class="map-container">
+                <!-- 使用SVG创建动态连接的知识图谱 -->
+                <svg id="techMapSvg" viewBox="0 0 1000 500"></svg>
+            </div>
+        </div>
+
+        <!-- 学习进度追踪 -->
+        <div class="learning-progress">
+            <h2>学习路线图</h2>
+            <div class="progress-track">
+                <div class="track-item completed">
+                    <div class="track-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="track-content">
+                        <h3>HTML基础</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="track-item completed">
+                    <div class="track-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div class="track-content">
+                        <h3>Java高级</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="track-item in-progress">
+                    <div class="track-icon">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <div class="track-content">
+                        <h3>JavaScript基础</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="track-item in-progress">
+                    <div class="track-icon">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <div class="track-content">
+                        <h3>React框架入门</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 50%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="track-item not-started">
+                    <div class="track-icon">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="track-content">
+                        <h3>Node.js后端开发</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="track-item not-started">
+                    <div class="track-icon">
+                        <i class="fas fa-circle"></i>
+                    </div>
+                    <div class="track-content">
+                        <h3>Vue.js框架</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 更多进度项... -->
+            </div>
+        </div>
+
+
+        <!-- 互动问答区 -->
+        <div class="qa-section">
+            <h2>技术问答</h2>
+            <div class="qa-container">
+                <div class="qa-item">
+                    <div class="question">
+                        <img src="Image/technology/T4.jpg" alt="提问者头像">
+                        <div class="question-content">
+                            <h3>如何优化React组件性能？</h3>
+                            <p>在开发大型React应用时，遇到了性能问题。这些问题通常表现为页面渲染速度缓慢、用户交互卡顿等。为了优化React组件的性能，可以采取以下几种策略：</p>
+                            <ul>
+                                <li><strong>避免不必要的重新渲染</strong>：使用`React.memo`、`PureComponent`或`shouldComponentUpdate`来避免不必要的重新渲染。</li>
+                                <li><strong>避免直接修改state</strong>：直接修改state会导致不必要的渲染，应该通过`setState`或`useState`来更新。</li>
+                                <li><strong>懒加载（Lazy Loading）</strong>：使用`React.lazy`和`Suspense`实现懒加载，按需加载组件。</li>
+                                <li><strong>代码分割（Code Splitting）</strong>：将应用拆分成多个较小的代码块，减少初次加载的时间。</li>
+                                <li><strong>避免不必要的绑定</strong>：避免在JSX中直接绑定事件，减少每次渲染时的函数创建。</li>
+                                <li><strong>使用`useMemo`和`useCallback`</strong>：缓存复杂计算结果和回调函数，减少不必要的重新计算和函数创建。</li>
+                                <li><strong>减少组件嵌套层级</strong>：避免深层嵌套的组件，提升渲染效率。</li>
+                                <li><strong>使用虚拟化技术</strong>：对于展示大量数据的列表，使用`react-window`或`react-virtualized`来优化性能。</li>
+                                <li><strong>使用服务端渲染（SSR）或静态生成（SSG）</strong>：通过SSR或SSG减少客户端渲染负担，提升页面加载速度。</li>
+                                <li><strong>优化网络请求</strong>：合并网络请求、避免重复请求等方式减少不必要的API调用。</li>
+                            </ul>
+                            <p>这些优化手段能够有效提升React应用的性能，提升用户体验，特别是在大型应用中尤为重要。</p>
+                        </div>
+                    </div>
+					<div class="question">
+					    <img src="Image/technology/T5.jpg" alt="提问者头像">
+					    <div class="question-content">
+					        <h3>如何优化Vue组件的性能？</h3>
+					        <p>在开发大型Vue应用时，性能问题是不可忽视的，特别是在组件渲染和用户交互响应上。为了提高Vue组件的性能，以下是一些常见的优化策略：</p>
+					        <ul>
+					            <li><strong>避免不必要的重新渲染</strong>：使用`v-once`和`v-memo`来缓存静态内容，减少不必要的DOM更新。</li>
+					            <li><strong>异步组件加载</strong>：利用`Vue.lazy`实现组件的按需加载。</li>
+					            <li><strong>减少计算属性的计算次数</strong>：将计算属性设计得尽量精简，避免不必要的计算。</li>
+					            <li><strong>事件委托</strong>：避免为每个子组件绑定事件，改为使用父组件进行事件委托。</li>
+					            <li><strong>使用`keep-alive`</strong>：对于频繁切换的组件，使用`keep-alive`来缓存组件，减少重新渲染的开销。</li>
+					            <li><strong>减少无用的 watchers</strong>：避免过多的`watch`，只对必要的值进行监控。</li>
+					            <li><strong>优化组件渲染</strong>：避免过多的深度嵌套和复杂的DOM结构，提升渲染效率。</li>
+					            <li><strong>使用虚拟滚动技术</strong>：对于长列表数据，使用`vue-virtual-scroller`等虚拟滚动库来提高性能。</li>
+					            <li><strong>合理使用Vuex</strong>：避免Vuex状态管理过于复杂，合理拆分模块。</li>
+					        </ul>
+					        <p>通过这些优化策略，可以有效提升Vue应用的性能，改善用户体验，尤其是在大型复杂的应用中尤为重要。</p>
+					    </div>
+					</div>
+
+                    <div class="answers">
+                        <!-- 回答列表 -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 分页控件 -->
+        <div class="pagination">
+            <button class="page-btn" disabled><i class="fas fa-chevron-left"></i></button>
+            <div class="page-numbers">
+                <span class="page-number active">1</span>
+                <span class="page-number">2</span>
+                <span class="page-number">3</span>
+                <span class="page-dots">...</span>
+                <span class="page-number">10</span>
+            </div>
+            <button class="page-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+	
+    <script src="JS/index.js"></script>
+	<script src="JS/technology.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+</body>
+</html>

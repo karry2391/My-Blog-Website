@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章详情 - KaiHub</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/article.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">KaiHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+    		<li><a href="life.html">生活</a></li>
+    		<li><a href="Music.html">音乐</a></li>
+    		<li><a href="technology.html">技术</a></li>
+    		<li><a href="tutorial.html">教程</a></li>
+            <li><a href="archive.html">归档</a></li>
+            <li><a href="about.html">关于</a></li>
+    		<li><a href="login.html">登录</a></li>
+        </ul>
+    	<div class="search-bar">
+    		<input type="text" placeholder="搜索问题、话题">
+    	</div>
+        <div class="toggle-theme" onclick="toggleTheme()">
+            <span id="theme-icon">🌑</span>
+        </div>
+    </nav>
+
+    <!-- 文章详情容器 -->
+    <div class="article-detail-container">
+        <!-- 返回按钮 -->
+        <div class="back-button" onclick="history.back()">
+            <i class="fas fa-arrow-left"></i> 返回
+        </div>
+
+        <!-- 文章主体 -->
+        <article class="article-detail">
+            <h1 class="article-title">Wireshark抓包神器教程-TCP包详解</h1>
+            <div class="article-meta">
+                <span class="article-date">发布时间：2024-11-30</span>
+                <div class="article-author">
+                    <img src="Image/Article/T5.jpg" alt="作者头像" class="author-avatar">
+                    <span class="author-name">相见时难别亦难</span>
+                </div>
+            </div>
+            <div class="article-cover">
+                <img src="Image/Article/Wireshark.png" alt="文章封面" class="cover-image">
+            </div>
+            <div class="article-content">
+				<h1>1.简介</h1>
+                <p>讲解和分享TCP协议的三次握手和四次挥手以及使用Wireshark抓取TCP/IP协议数据包的技能，能够深入分析TCP帧格式及“TCP三次握手”。通过抓包和分析数据包来理解TCP/IP协议，进一步加深对TCP包的理解和认识。</p>
+                <h1>2.TCP连接的建立（三次握手）</h1>
+				<h4>2.1通俗易懂篇</h4>
+				<p>首先来一个我们日常工作中比较常见的例子：远程会议、视频或者打电话。先上图:</p>
+			<div class="article-cover">
+			    <img src="Image/Article/20.png" alt="文章封面" class="cover-image">
+			</div>
+				<p>TCP的三次握手有点像我们远程有会议(疫情期间都遇到过吧)</p>
+				<p>1.A同事：喂！听得到我说话吗?(第一次握手A-->B)</p>
+				<p>2.B同事：听得到，你能听到我说话吗?(第二次握手B-->A)</p>
+				<p>3.A同事：听到了，我们可以开会了(第三次握手A-->B)</p>
+				<p>一次完整的远程会议流程。</p>
+				<h4>2.2掉发烧脑篇</h4>
+				<p>三次握手的过程，还是先上图:</p>
+			<div class="article-cover">
+			    <img src="Image/Article/21.gif" alt="文章封面" class="cover-image">
+			</div>
+				<p>最开始的时候客户端和服务器都是处于CLOSED状态。主动打开连接的为客户端，被动打开连接的是服务器。</p>
+				<p>1.第一次握手：Client将标志位SYN置为1，随机产生一个值seq=J，并将该数据包发送给Server，Client进入SYN_SENT状态，等待Server确认。</p>
+				<p>2.第二次握手：Server收到数据包后由标志位SYN=1知道Client请求建立连接，Server将标志位SYN和ACK都置为1，ack (number )=J+1，随机产生一个值seq=K，并将该数据包发送给Client以确认连接请求，Server进入SYN_RCVD状态。</p>
+				<p>3.第三次握手：Client收到确认后，检查ack是否为J+1，ACK是否为1，如果正确则将标志位ACK置为1，ack=K+1，并将该数据包发送给Server，Server检查ack是否为K+1，ACK是否为1，如果正确则连接建立成功，Client和Server进入ESTABLISHED状态，完成三次握手，随后Client与Server之间可以开始传输数据了。</p>
+			<div class="article-cover">
+			    <img src="Image/Article/22.png" alt="文章封面" class="cover-image">
+			</div>
+				<h1>3.TCP连接的释放（四次挥手）</h1>
+				<h4>3.1通俗易懂篇</h4>
+				<p>首先来一个我们日常工作中比较常见的例子:和渣男/女分手、离婚。先上图：</p>
+			<div class="article-cover">
+			    <img src="Image/Article/23.png" alt="文章封面" class="cover-image">
+			</div>
+				<p>故事简述：C和D是男女朋友，C有一天发现D是渣男，想跟D分手。</p>
+				<p>1.C向D提出分手请求（第一次挥手）;</p>
+				<p>2.D收到请求后，虽然D是渣男，但是D还是很礼貌的，告诉C，我收到你的请求了；但是我现在忙着跟其他人谈恋爱昵（第二次挥手）;</p>
+				<p>3.D终于空下来了，告诉C，我接受你的分手请求了（第三次挥手）;</p>
+				<p>4.C收到D的回复后，告诉D我终于解脱（第四次挥手）;</p>
+				<h4>3.2掉发烧脑篇</h4>
+				<p>四次挥手的过程，还是先上图：</p>
+			<div class="article-cover">
+			    <img src="Image/Article/24.gif" alt="文章封面" class="cover-image">
+			</div>
+				<p>数据传输完毕后，双方都可释放连接。最开始的时候，客户端和服务器都是处于ESTABLISHED状态，然后客户端主动关闭，服务器被动关闭。</p>
+				<p>1.客户端进程发出连接释放报文，并且停止发送数据。释放数据报文首部，FIN=1，其序列号为seq=u（等于前面已经传送过来的数据的最后一个字节的序号加1），此时，客户端进入FIN-WAIT-1（终止等待1）状态。 TCP规定，FIN报文段即使不携带数据，也要消耗一个序号。</p>
+				<p>2.服务器收到连接释放报文，发出确认报文，ACK=1，ack=u+1，并且带上自己的序列号seq=v，此时，服务端就进入了CLOSE-WAIT（关闭等待）状态。TCP服务器通知高层的应用进程，客户端向服务器的方向就释放了，这时候处于半关闭状态，即客户端已经没有数据要发送了，但是服务器若发送数据，客户端依然要接受。这个状态还要持续一段时间，也就是整个CLOSE-WAIT状态持续的时间。</p>
+				<p>3.客户端收到服务器的确认请求后，此时，客户端就进入FIN-WAIT-2（终止等待2）状态，等待服务器发送连接释放报文（在这之前还需要接受服务器发送的最后的数据）。</p>
+				<p>4.服务器将最后的数据发送完毕后，就向客户端发送连接释放报文，FIN=1，ack=u+1，由于在半关闭状态，服务器很可能又发送了一些数据，假定此时的序列号为seq=w，此时，服务器就进入了LAST-ACK（最后确认）状态，等待客户端的确认。</p>
+				<p>5.客户端收到服务器的连接释放报文后，必须发出确认，ACK=1，ack=w+1，而自己的序列号是seq=u+1，此时，客户端就进入了TIME-WAIT（时间等待）状态。*注意此时TCP连接还没有释放，必须经过2∗ ∗MSL（最长报文段寿命）的时间后，当客户端撤销相应的TCB后，才进入CLOSED状态。</p>
+				<p>6.服务器只要收到了客户端发出的确认，立即进入CLOSED状态。同样，撤销TCB后，就结束了这次的TCP连接。可以看到，服务器结束TCP连接的时间要比客户端早一些。</p>
+			<div class="article-cover">
+			    <img src="Image/Article/25.png" alt="文章封面" class="cover-image">
+			</div>
+				<h1>4.WireShark抓包实战</h1>
+				<p>以度娘为例, 进行演示WireShark抓包实战</p>
+				<h4>4.1获取度娘IP</h4>
+				<p>1.首先我们来先看一下百度的IP是多少，想必都知道如何获取吧！方法很多，宏哥就要其中一种最简单的方法来看一下：通过ping命令即可：ping baidu.com，如下图所示：</p>
+			<div class="article-cover">
+			    <img src="Image/Article/26.png" alt="文章封面" class="cover-image">
+			</div>
+				<p>2.从上图可以看出其中39.156.66.10就是度娘的IP地址，后面需要通过这个IP地址，作为wireshark的过滤条件，方便我们找到对应的报文。</p>
+				<h4>4.2WireShark抓包</h4>
+				<p>1.打开WireShark，并开启抓包模式开始捕获，如下图所示：</p>
+			<div class="article-cover">
+			    <img src="Image/Article/27.png" alt="文章封面" class="cover-image">
+			</div>
+				<p>2.在命令行输入curl -I baidu.com来向百度发送一个HTTP请求。如下图所示:</p>
+			<div class="article-cover">
+			    <img src="Image/Article/28.png" alt="文章封面" class="cover-image">
+			</div>
+				<p>3.停止wireshark抓包。在wireshark的过滤器中，输入ip.addr == 39.156.66.10来过滤发送给百度的请求。可以得到如下过滤后的报文。如下图所示：</p>
+			<div class="article-cover">
+			    <img src="Image/Article/29.png" alt="文章封面" class="cover-image">
+			</div>
+				<p>4.从上图我们可以清楚地看到前三条是TCP三次握手建立连接的报文，中间三个是包括一个HTTP请求，一个TCP的确认报文和一个HTTP响应报文，响应报文的TCP确认报文和第一次挥手被放在了同一个报文里。后面的四条是TCP四次挥手断开连接的报文。</p>
+				<h4>4.3三次握手</h4>
+				<h5>4.3.1第一次握手</h5>
+				<p>三次握手的第一个报文：SYN报文，也就是第一次握手，如下图所示：</p>
+			<div class="article-cover">
+			    <img src="Image/Article/30.png" alt="文章封面" class="cover-image">
+			</div>
+				<p>然后在WireShark中查看一下我们抓包抓到的是否正确，如下图所示：</p>
+			<div class="article-cover">
+			    <img src="Image/Article/31.png" alt="文章封面" class="cover-image">
+			</div>
+				<p>1.根据之前理论知识，我们趁热打铁：首先，来看第一个报文，即三次握手的第一次握手。点击选中第一个TCP即可查看。如下图所示：</p>
+			<div class="article-cover">
+			    <img src="Image/Article/32.png" alt="文章封面" class="cover-image">
+			</div>
+				<p>2.整个第一次握手的报文消息详细解析，都在上图中右边做了红色标注。我们来看比较重要的几个部分。</p>
+				<p>①开始是2字节的源端口号和2字节的目的端口号。</p>
+				<p>②紧接着的四个字节，表示的是客户端传送给服务端的初始序号，这是一个随机值，目的是维护安全。</p>
+				<p>③注意，再紧接着的四个字节是确认号，不过，在第一次握手的报文中，ACK标志bit位是0，所以，实际上在第一次握手时，确认号是无意义的，因为这时候也没有什么需要确认的。</p>
+				<p>④再后面的4个bit，表示的是TCP头部长度，也可以理解为数据偏移量。注意，这里是8，而该字段的单位是4字节，所以TCP头部是8*4 = 32字节；</p>
+				<p>⑤紧接着的是4个保留bit位，和8个特殊标志bit位。这些标志按顺序依次是CWR、ECE、URG、ACK、PSH、RST、SYN、FIN，关注ACK、SYN、FIN即可。这里SYN为1，表示是一个建立连接的报文，ACK为0，表示本报文的确认号无意义。</p>
+				<p>⑥后面2字节表示接收窗口大小，是用于流量控制的。</p>
+				<p>⑦再后面，是2字节的校验和，2字节的紧急数据指针。</p>
+				<p>⑧需要额外指出的是，此报文指出TCP头部有32个字节，而不是一般报文是20字节。这里是因为在选项部分，本报文携带了一些额外的数据，其中包括MSS(Maximum Segment Size): 1460 bytes 等信息。</p>
+				<h5>4.3.2第二次握手</h5>
+				<p>三次握手的第二个报文：SYN+ACK报文，也就是第二次握手，如下图所示：</p>
+			<div class="article-cover">
+			    <img src="Image/Article/33.png" alt="文章封面" class="cover-image">
+			</div>
+				<p>然后在WireShark中查看一下我们抓包抓到的是否正确，如下图所示：</p>
+			<div class="article-cover">
+			    <img src="Image/Article/34.png" alt="文章封面" class="cover-image">
+			</div>
+				<p>1.同样的方法：点击选中第二个TCP即可查看。如下图所示：</p>
+			<div class="article-cover">
+			    <img src="Image/Article/35.png" alt="文章封面" class="cover-image">
+			</div>
+				<p>2.上图中右边红色部分标注了第二次握手的报文详细信息，其大部分都和第一次握手类似。来看比较重要的几个部分</p>
+				<p>①源端口号和目的端口号正好和第一次握手相反，说明这是服务端响应客户端的报文</p>
+				<p>②服务端给出了一个自己的初始序号A1 7C 07 91，对应2709260177。</p>
+				<p>③服务端的ACK bit位是1，说明该报文的确认号是有意义的，确认号对应的值是15 ec 6b df，恰好是第一次握手的报文的序号+1，表示在该数字之前的字节都已经收到，期望下一次收到的报文的序号是这个数</p>
+				<p>④这里TCP头部也有32字节，选项部分同样说明了自己的MSS等信息，这里的MSS给的值是1412字节。</p>				
+				<p>总体上来说，第二次握手的报文和第一次握手的报文的区别在ACK bit位是1，并且确认号是第一次握手报文的序号+1，此外，两个报文都包括了额外的选项部分，并且头部都有32个字节。</p>
+				<h1>5.小结</h1>
+				<p>前边理论加后边的实践，想必小伙伴或者童鞋们对TCP包有了进一步的认识了吧，宏哥觉得说清楚了，如果有想了解更清楚地，可以查一些资料。好了，今天时间也不早了，就到这里！感谢您耐心的阅读~~</p>
+			</div>
+
+            <!-- 点赞和分享区域 -->
+            <div class="article-actions">
+                <button class="like-button" onclick="handleLike()">
+                    <i class="fas fa-thumbs-up"></i>
+                    <span class="like-count">0</span>
+                </button>
+                <button class="share-button" onclick="handleShare()">
+                    <i class="fas fa-share"></i> 分享
+                </button>
+            </div>
+
+            <!-- 评论区 -->
+            <div class="comments-section">
+                <h3>评论区</h3>
+                <div class="comment-form">
+                    <textarea placeholder="写下你的评论..."></textarea>
+                    <button onclick="submitComment()">发表评论</button>
+                </div>
+                <div class="comments-list">
+                    <!-- 评论列表 -->
+                </div>
+            </div>
+        </article>
+
+        <!-- 相关文章推荐 -->
+        <div class="related-articles">
+            <h3>🚀 2024年11月 GitHub 十大热门项目排行榜 🔥</h3>
+            <div class="related-articles-list">
+        		<a href="https://github.com/Skyvern-AI/skyvern">1.Skyvern-AI / Skyvern</a>
+        		<a href="https://github.com/anthropics/courses">2.Anthropics / Courses</a>
+        		<a href="https://github.com/abi/screenshot-to-code">3.Abi / Screenshot-to-Code</a>
+        		<a href="https://github.com/dgtlmoon/changedetection.io">4.Dgtlmoon / Changedetection.io</a>
+        		<a href="https://github.com/paperless-ngx/paperless-ngx">5.Paperless-ngx / Paperless-ngx</a>
+        		<a href="https://github.com/bluesky-social/social-app">6.Bluesky-social / Social-app</a>
+        		<a href="https://github.com/ToolJet/ToolJet">7.ToolJet / ToolJet</a>
+        		<a href="https://github.com/meta-llama/llama-recipes">8.Meta-llama / Llama-recipes</a>
+        		<a href="https://github.com/yamadashy/repomix">9.Yamadashy / Repomix</a>
+        		<a href="https://github.com/PowerShell/PowerShell">10.PowerShell / PowerShell</a>
+            </div>
+        	<h3>🌟 必看：2024年编程学习资源推荐 📘</h3>
+        	<div class="related-articles-list">
+        		<a href="https://github.com/EbookFoundation/free-programming-books">1. EbookFoundation / Free-programming-books</a>
+        		<a href="https://github.com/ossu/computer-science">2. OSSU / Computer-science</a>
+        		<a href="https://github.com/danistefanovic/build-your-own-x">3. Danistefanovic / Build-your-own-X</a>
+        		<a href="https://github.com/theodinproject/curriculum">4. The Odin Project / Curriculum</a>
+        		<a href="https://github.com/getify/You-Dont-Know-JS">5. Getify / You-Don’t-Know-JS</a>
+        	</div>
+        
+        	<h3>💡 最新AI工具与框架推荐 🤖</h3>
+        	<div class="related-articles-list">
+        		<a href="https://github.com/huggingface/transformers">1. HuggingFace / Transformers</a>
+        		<a href="https://github.com/google/jax">2. Google / Jax</a>
+        		<a href="https://github.com/ultralytics/ultralytics">3. Ultralytics / YOLOv8</a>
+        		<a href="https://github.com/karpathy/nn-zero-to-hero">4. Karpathy / NN-zero-to-hero</a>
+        		<a href="https://github.com/CompVis/stable-diffusion">5. CompVis / Stable-diffusion</a>
+        	</div>
+        
+        	<h3>🛠️ 优秀开源工具与实用软件 🔧</h3>
+        	<div class="related-articles-list">
+        		<a href="https://github.com/qbittorrent/qBittorrent">1. QBittorrent / qBittorrent</a>
+        		<a href="https://github.com/obsidianmd/obsidian-releases">2. ObsidianMD / Obsidian</a>
+        		<a href="https://github.com/Flameshot-org/flameshot">3. Flameshot-org / Flameshot</a>
+        		<a href="https://github.com/micropython/micropython">4. Micropython / Micropython</a>
+        		<a href="https://github.com/tmux/tmux">5. Tmux / Tmux</a>
+        	</div>
+        </div>
+    </div>
+
+    <script src="JS/index.js"></script>
+    <script src="JS/article.js"></script>
+</body>
+</html>

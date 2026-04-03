@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="simple-404.css">
+	</head>
+	<body>
+		<p style="width: 100%; text-align: center; font-size: 140px; height: 40px;">404</p>
+		<p style="width: 100%; text-align: center; font-size: 40px;">Page Not Found</p>
+		<p style="width: 100%; text-align: center; font-size: 40px;">嘿嘿🤭🤭暂时还没想好!</p>
+		<h1><p style="width: 100%; text-align: center;">没时间更新</p></h1>
+	</body>
+</html>
+<script>
+	// 动态插入 LiveReload 脚本，用于实现实时刷新功能
+	document.write('<script src="//' + (location.host || 'localhost').split(':')[0] + ':35929/livereload.js?snipver=1"></' + 'script>')
+
+	// 定义一个自定义的 LiveReload 插件
+	class reloadPlugin {
+		// reload 方法用于判断是否需要重新加载页面
+		reload(path, options){
+			// 如果当前预览的文件与路径不匹配，则返回 true 进行重新加载
+			return decodeURIComponent(Dcloud_Html_preview_filename) !== path;
+		}
+	}
+	// 如果 LiveReload 存在，则添加自定义插件
+	if (LiveReload){
+		LiveReload.addPlugin(reloadPlugin)
+	}
+</script>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>归档 - KaiHub</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/category.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">KaiHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+    		<li><a href="life.html">生活</a></li>
+    		<li><a href="Music.html">音乐</a></li>
+    		<li><a href="technology.html">技术</a></li>
+    		<li><a href="tutorial.html">教程</a></li>
+            <li><a href="archive.html">归档</a></li>
+            <li><a href="about.html">关于</a></li>
+    		<li><a href="login.html">登录</a></li>
+        </ul>
+    	<div class="search-bar">
+    		<input type="text" placeholder="搜索问题、话题">
+    	</div>
+        <div class="toggle-theme" onclick="toggleTheme()">
+            <span id="theme-icon">🌑</span>
+        </div>
+    </nav>
+
+    <!-- 主内容区域 -->
+    <div class="archive-container">
+        <!-- 归档标题 -->
+        <div class="archive-header">
+            <h1>文章归档</h1>
+            <div class="archive-stats">
+                <span>总文章: 128</span>
+                <span>总字数: 258,693</span>
+                <span>最后更新: 2024-11-24</span>
+            </div>
+        </div>
+
+        <!-- 时间线视图 -->
+        <div class="timeline-view">
+            <!-- 年份区块 -->
+            <div class="year-block">
+                <h2 class="year-title">2024</h2>
+                
+                <!-- 11月文章 -->
+				<div class="month-block">
+					<h3 class="month-title">11月</h3>
+					<ul class="article-list">
+						<li class="article-item">
+							<span class="article-date">24日</span>
+							<span class="article-title">深入理解JavaScript原型链</span>
+							<div class="article-meta">
+								<span class="category">技术</span>
+								<span class="views">1.2k阅读</span>
+							</div>
+						</li>
+						<li class="article-item">
+							<span class="article-date">23日</span>
+							<span class="article-title">Python异步编程指南</span>
+							<div class="article-meta">
+								<span class="category">教程</span>
+								<span class="views">856阅读</span>
+							</div>
+						</li>
+						<li class="article-item">
+							<span class="article-date">22日</span>
+							<span class="article-title">React组件性能优化技巧</span>
+							<div class="article-meta">
+								<span class="category">技术</span>
+								<span class="views">1.5k阅读</span>
+							</div>
+						</li>
+						<li class="article-item">
+							<span class="article-date">20日</span>
+							<span class="article-title">如何在Vue中使用状态管理</span>
+							<div class="article-meta">
+								<span class="category">教程</span>
+								<span class="views">980阅读</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+                <!-- 10月文章 -->
+				<div class="month-block">
+					<h3 class="month-title">10月</h3>
+					<ul class="article-list">
+						<li class="article-item">
+							<span class="article-date">30日</span>
+							<span class="article-title">深入浅出计算机网络基础</span>
+							<div class="article-meta">
+								<span class="category">技术</span>
+								<span class="views">2.1k阅读</span>
+							</div>
+						</li>
+						<li class="article-item">
+							<span class="article-date">28日</span>
+							<span class="article-title">JavaScript中的异步编程与Promise</span>
+							<div class="article-meta">
+								<span class="category">技术</span>
+								<span class="views">1.8k阅读</span>
+							</div>
+						</li>
+						<li class="article-item">
+							<span class="article-date">26日</span>
+							<span class="article-title">Python与机器学习入门</span>
+							<div class="article-meta">
+								<span class="category">教程</span>
+								<span class="views">1.2k阅读</span>
+							</div>
+						</li>
+						<li class="article-item">
+							<span class="article-date">20日</span>
+							<span class="article-title">CSS布局技巧：Flexbox与Grid</span>
+							<div class="article-meta">
+								<span class="category">技术</span>
+								<span class="views">1k阅读</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+            <!-- 2023年文章 -->
+			<div class="year-block">
+				<h2 class="year-title">2023</h2>
+	
+				<!-- 12月文章 -->
+				<div class="month-block">
+					<h3 class="month-title">12月</h3>
+					<ul class="article-list">
+						<li class="article-item">
+							<span class="article-date">15日</span>
+							<span class="article-title">Git与版本控制的最佳实践</span>
+							<div class="article-meta">
+								<span class="category">技术</span>
+								<span class="views">2.3k阅读</span>
+							</div>
+						</li>
+						<li class="article-item">
+							<span class="article-date">10日</span>
+							<span class="article-title">前端开发中的常见坑与解决方案</span>
+							<div class="article-meta">
+								<span class="category">教程</span>
+								<span class="views">1.9k阅读</span>
+							</div>
+						</li>
+						<li class="article-item">
+							<span class="article-date">5日</span>
+							<span class="article-title">如何高效学习计算机科学基础</span>
+							<div class="article-meta">
+								<span class="category">生活</span>
+								<span class="views">2k阅读</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+	
+				<!-- 11月文章 -->
+				<div class="month-block">
+					<h3 class="month-title">11月</h3>
+					<ul class="article-list">
+						<li class="article-item">
+							<span class="article-date">25日</span>
+							<span class="article-title">如何进行高效的团队协作</span>
+							<div class="article-meta">
+								<span class="category">生活</span>
+								<span class="views">1.4k阅读</span>
+							</div>
+						</li>
+						<li class="article-item">
+							<span class="article-date">18日</span>
+							<span class="article-title">深入理解数据库索引与查询优化</span>
+							<div class="article-meta">
+								<span class="category">技术</span>
+								<span class="views">1.6k阅读</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+        <!-- 筛选工具 -->
+        <div class="archive-tools">
+            <div class="filter-section">
+                <select id="yearFilter">
+                    <option value="">选择年份</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                </select>
+                <select id="monthFilter">
+                    <option value="">选择月份</option>
+                    <option value="11">11月</option>
+                    <option value="10">10月</option>
+					<option value="9">9月</option>
+                    <!-- 更多月份... -->
+                </select>
+                <select id="categoryFilter">
+                    <option value="">选择分类</option>
+                    <option value="tech">技术</option>
+                    <option value="tutorial">教程</option>
+                    <option value="life">生活</option>
+                </select>
+            </div>
+            <div class="view-toggle">
+                <button class="active">时间线视图</button>
+                <button>列表视图</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/index.js"></script>
+    <script src="JS/archive.js"></script>
+</body>
+</html>

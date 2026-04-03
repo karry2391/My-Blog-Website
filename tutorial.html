@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教程 - KaiHub</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/category.css">
+    <link rel="stylesheet" href="CSS/tutorial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">KaiHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+    		<li><a href="life.html">生活</a></li>
+    		<li><a href="Music.html">音乐</a></li>
+    		<li><a href="technology.html">技术</a></li>
+    		<li><a href="tutorial.html">教程</a></li>
+            <li><a href="archive.html">归档</a></li>
+            <li><a href="about.html">关于</a></li>
+    		<li><a href="login.html">登录</a></li>
+        </ul>
+    	<div class="search-bar">
+    		<input type="text" placeholder="搜索问题、话题">
+    	</div>
+        <div class="toggle-theme" onclick="toggleTheme()">
+            <span id="theme-icon">🌑</span>
+        </div>
+    </nav>
+
+    <!-- 主内容区域 -->
+    <div class="category-container">
+        <!-- 类别标题 -->
+        <div class="category-header">
+            <h1>实用教程</h1>
+            <p>从入门到精通的完整学习指南</p>
+        </div>
+
+        <!-- 热门课程滑块 -->
+        <div class="featured-courses">
+            <h2>热门推荐</h2>
+            <div class="course-slider">
+                <div class="slider-container">
+                    <div class="course-slide">
+                        <img src="Image/tutorial/course1.png" alt="课程封面">
+                        <div class="slide-content">
+                            <span class="course-tag"></span>
+                            <h3>Web全栈开发实战</h3>
+                            <p>从零开始学习Web开发，包含前端和后端完整知识体系</p>
+                            <div class="course-meta">
+                                <span><i class="fas fa-user-graduate"></i> 2.5k+学员</span>
+                                <span><i class="fas fa-star"></i> 4.9分</span>
+                            </div>
+                        </div>
+                    </div>
+					<div class="course-slide">
+					    <img src="Image/tutorial/course2.png" alt="课程封面">
+					    <div class="slide-content">
+					        <span class="course-tag"></span>
+					        <h3>最新Python爬虫</h3>
+					        <p>2023最新Python爬虫 APP逆向《逆向滑块 抖音 知乎 x站 头条案例》评论 x-gorgon加密字段算法</p>
+					        <div class="course-meta">
+					            <span><i class="fas fa-user-graduate"></i> 1.8k+学员</span>
+					            <span><i class="fas fa-star"></i> 4.8分</span>
+					        </div>
+					    </div>
+					</div>
+					<div class="course-slide">
+					    <img src="Image/tutorial/course3.png" alt="课程封面">
+					    <div class="slide-content">
+					        <span class="course-tag"></span>
+					        <h3>Kali网络安全</h3>
+					        <p>kali Linux入门教程！kali一键汉化中文版，不会英语也能轻松学会，手把手带你入门学习渗透测试，入门到入狱</p>
+					        <div class="course-meta">
+					            <span><i class="fas fa-user-graduate"></i> 5.5k+学员</span>
+					            <span><i class="fas fa-star"></i> 5.0分</span>
+					        </div>
+					    </div>
+					</div>
+                    <!-- 更多滑块... -->
+                </div>
+                <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <!-- 课程分类区域 -->
+        <div class="course-categories">
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>前端编程语言</h3>
+                <p>3门课程</p>
+                <div class="category-preview">
+                    <img src="Image/tutorial/preview1.jpg" alt="预览图">
+                    <img src="Image/tutorial/preview2.jpg" alt="预览图">
+                    <img src="Image/tutorial/preview3.jpg" alt="预览图">
+                </div>
+            </div>
+			<div class="category-card">
+			    <div class="category-icon">
+			        <i class="fas fa-code"></i>
+			    </div>
+			    <h3>后端开发</h3>
+			    <p>10门课程</p>
+			    <div class="category-preview">
+			        <img src="Image/tutorial/preview4.png" alt="预览图">
+			        <img src="Image/tutorial/preview5.png" alt="预览图">
+			        <img src="Image/tutorial/preview6.jpg" alt="预览图">
+			    </div>
+			</div>
+			<div class="category-card">
+			    <div class="category-icon">
+			        <i class="fas fa-code"></i>
+			    </div>
+			    <h3>网络安全</h3>
+			    <p>5门课程</p>
+			    <div class="category-preview">
+			        <img src="Image/tutorial/preview7.jpg" alt="预览图">
+			        <img src="Image/tutorial/preview8.jpg" alt="预览图">
+			        <img src="Image/tutorial/preview9.png" alt="预览图">
+			    </div>
+			</div>
+            <!-- 更多分类卡片... -->
+        </div>
+
+        <!-- 学习路径 -->
+        <div class="learning-paths">
+            <h2>推荐学习路径</h2>
+            <div class="path-cards">
+                <div class="path-card">
+                    <div class="path-header">
+                        <img src="Image/tutorial/path1.png" alt="路径封面">
+                        <div class="path-overlay">
+                            <h3>前端开发工程师</h3>
+                            <span class="duration">预计6个月</span>
+                        </div>
+                    </div>
+                    <div class="path-content">
+                        <div class="path-progress">
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 60%"></div>
+                            </div>
+                            <span>30% 完成</span>
+                        </div>
+                        <ul class="path-steps">
+                            <li class="completed"><i class="fas fa-check-circle"></i> HTML & CSS基础</li>
+                            <li class="completed"><i class="fas fa-check-circle"></i> JavaScript核心</li>
+                            <li class="current"><i class="fas fa-play-circle"></i> React框架入门</li>
+                            <li><i class="fas fa-circle"></i> Node.js后端开发</li>
+							<li><i class="fas fa-circle"></i> 前后端交互（Ajax、Fetch、RESTful API）</li>
+							<li><i class="fas fa-circle"></i> Git版本控制</li>
+							<li><i class="fas fa-circle"></i> Web安全基础（XSS、CSRF）</li>
+                        </ul>
+                        <button class="continue-btn">继续学习</button>
+                    </div>
+                </div>
+				<div class="path-card">
+				    <div class="path-header">
+				        <img src="Image/tutorial/path2.png" alt="路径封面">
+				        <div class="path-overlay">
+				            <h3>Java开发工程师</h3>
+				            <span class="duration">预计9个月</span>
+				        </div>
+				    </div>
+				    <div class="path-content">
+				        <div class="path-progress">
+				            <div class="progress-bar">
+				                <div class="progress" style="width: 60%"></div>
+				            </div>
+				            <span>80% 完成</span>
+				        </div>
+				        <ul class="path-steps">
+				            <li class="completed"><i class="fas fa-check-circle"></i> Java基础（数据类型、控制结构、面向对象）</li>
+				            <li class="completed"><i class="fas fa-check-circle"></i> 集合框架（List, Set, Map）</li>
+							<li class="completed"><i class="fas fa-check-circle"></i> 异常处理与多线程</li>
+							<li class="completed"><i class="fas fa-check-circle"></i> 数据库操作（JDBC）</li>
+							<li class="completed"><i class="fas fa-check-circle"></i> Spring框架入门</li>
+				            <li class="current"><i class="fas fa-play-circle"></i> Web开发（Servlet, JSP）</li>
+				            <li><i class="fas fa-circle"></i> 单元测试与调试</li>
+				        </ul>
+				        <button class="continue-btn">继续学习</button>
+				    </div>
+				</div>
+                <!-- 更多路径卡片... -->
+            </div>
+        </div>
+
+        <!-- 视频教程区域 -->
+        <div class="video-tutorials">
+            <h2>精选视频教程</h2>
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <img src="Image/tutorial/video1.png" alt="视频缩略图">
+                        <span class="video-duration">15:30</span>
+                        <button class="play-btn"><i class="fas fa-play"></i></button>
+                    </div>
+                    <div class="video-info">
+                        <h3>Vue.js组件开发实战</h3>
+                        <p>学习Vue.js组件的创建、通信和优化技巧</p>
+                        <div class="video-meta">
+                            <span><i class="fas fa-eye"></i> 1.2k</span>
+                            <span><i class="fas fa-thumbs-up"></i> 98%</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- 更多视频卡片... -->
+            </div>
+        </div>
+
+        <!-- 实践项目 -->
+        <div class="practice-projects">
+            <h2>实战项目</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="Image/tutorial/project1.png" alt="项目预览">
+                    <div class="project-content">
+                        <h3>在线商城开发</h3>
+                        <p>使用React + Node.js开发完整电商平台</p>
+                        <ul class="project-features">
+                            <li><i class="fas fa-check"></i> 实战源码</li>
+                            <li><i class="fas fa-check"></i> 在线指导</li>
+                            <li><i class="fas fa-check"></i> 答疑解惑</li>
+                        </ul>
+                        <div class="project-footer">
+                            <span class="difficulty">中级</span>
+                            <button class="start-project">开始项目</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 更多项目卡片... -->
+            </div>
+        </div>
+
+        <!-- 学习社区 -->
+        <div class="learning-community">
+            <h2>学习社区</h2>
+            <div class="community-content">
+                <div class="discussion-board">
+                    <h3>最新讨论</h3>
+                    <div class="discussion-list">
+                        <div class="discussion-item">
+                            <img src="Image/tutorial/avatar1.jpg" alt="用户头像">
+                            <div class="discussion-info">
+                                <h4>如何解决跨域问题？</h4>
+                                <p>开发过程中遇到CORS（跨域资源共享）问题时，通常是因为浏览器对跨域请求进行了安全限制。CORS问题发生的原因是，浏览器不允许一个页面的JavaScript脚本访问另一个域、协议或端口上的资源，除非该资源明确允许跨域访问。</p>
+                                <h4>为什么会遇到CORS问题？</h4>
+								<p>当你的前端应用（例如在localhost或其他开发环境中运行）请求一个来自不同域（如https://api.example.com）的资源时，浏览器会发起一个预检请求（preflight request），即发送一个OPTIONS请求，询问目标服务器是否允许跨域请求。</p>
+								<p>如果服务器响应不符合CORS标准，浏览器会拒绝实际的请求，并显示CORS相关的错误信息。</p>
+								<h4>CORS常见错误：</h4>
+								<p>No 'Access-Control-Allow-Origin' header is present on the requested resource: 服务器没有返回Access-Control-Allow-Origin响应头。</p>
+								<p>CORS header ‘Access-Control-Allow-Origin’ missing: 请求的目标资源没有正确的CORS头部。</p>
+								<h4>解决CORS问题的方法：</h4>
+								<p>1. 后端解决方案（最推荐）服务器设置CORS头部：后端可以通过设置Access-Control-Allow-Origin等响应头来允许跨域请求。具体设置取决于你使用的后端框架。</p>
+								<p>2. 前端开发中的解决方法 使用代理服务器：在开发环境中，使用代理可以绕过CORS问题。例如，在React中，你可以在package.json中配置代理</p>
+								<div class="discussion-meta">
+                                    <span>30分钟前</span>
+                                    <span>5回复</span>
+                                </div>
+                            </div>
+                        </div>
+						<div class="discussion-item">
+						    <img src="Image/tutorial/avatar2.jpg" alt="用户头像">
+						    <div class="discussion-info">
+						        <h4>如何避免死锁？</h4>
+								<h5>避免死锁的策略包括：</h5>
+								<p>1. 避免嵌套锁： 尽量避免多个线程持有多个锁。如果必须持有多个锁，确保所有线程都按相同的顺序获取锁。</p>
+								<p>2. 锁的顺序： 如果多个线程需要获取多个锁，确保所有线程都按相同的顺序获取锁，从而避免死锁的循环等待条件。</p>
+								<p>3. 锁超时机制： 设定超时值，如果线程在一定时间内没有获取到锁，就放弃锁并采取其他措施，避免长时间等待。</p>
+								<p>4. 使用tryLock： 使用ReentrantLock的tryLock()方法尝试获取锁，如果没有获取到锁就可以进行其他处理或尝试获取锁。</p>
+								<h4>总结：</h4>
+								<p>死锁发生是因为多个线程在等待彼此持有的锁，导致程序永远无法继续执行。</p>
+								<p>避免死锁的方法包括按顺序获取锁、使用tryLock、设定锁的超时等。</p>
+								<p>检测死锁可以通过ThreadMXBean来进行。</p>
+								<p>了解和掌握这些技巧有助于你在多线程编程中避免死锁问题。</p>
+								<div class="discussion-meta">
+						            <span>30分钟前</span>
+						            <span>5回复</span>
+						        </div>
+						    </div>
+						</div>
+                        <!-- 更多讨论项... -->
+                    </div>
+                </div>
+                <div class="study-groups">
+                    <h3>学习小组</h3>
+                    <div class="group-list">
+                        <div class="group-item">
+                            <div class="group-header">
+                                <img src="Image/tutorial/group1.jpg" alt="小组封面">
+                                <h4>React学习小组</h4>
+                            </div>
+                            <p>一起学习React，分享经验与心得</p>
+							<p>学习React是一个逐步掌握的过程。对于初学者来说，React可能有点抽象，因为它与传统的前端开发方式（例如直接操作DOM）有很大的不同。以下是我为你总结的一些学习React的经验和心得：</p>
+                            <h4>1. 理解React的核心概念</h4>
+							<p>1. 组件化：React的核心思想是将UI拆分成多个小的、可复用的组件。每个组件都有自己的状态和行为，组件通过props来传递数据。</p>
+							<p>2. JSX语法：React使用JSX语法，实际上是JavaScript和HTML的结合。它允许你在JavaScript中写类似HTML的代码，但最终会被转换成JavaScript代码。</p>
+							<p>3. 虚拟DOM：React使用虚拟DOM来提高性能。每当状态更新时，React会先在虚拟DOM中更新UI，然后将变化最小化地更新到实际DOM中。</p>
+							<h4>2. 从基础入手，循序渐进</h4>
+							<p>1. JSX：学会JSX的语法是入门的第一步。理解JSX中HTML元素、表达式插入、条件渲染和循环渲染等基本特性。</p>
+							<p>2. 组件（Function Component & Class Component）：从函数组件开始学习，因为它们简单易懂，且随着React的进步，函数组件成为主流。了解useState和useEffect钩子（Hooks）是学习的重点。</p>
+							<p>3. State & Props：React的状态（state）和属性（props）是组件之间交互的关键。理解它们的区别、何时使用、以及如何管理状态（如useState，useReducer）对于构建动态界面至关重要。</p>
+							<p>4. 事件处理：学习React中如何处理事件，了解事件处理的合成事件机制（SyntheticEvent）。</p>
+							<h4>3. 掌握React Hooks（函数组件的核心）</h4>
+							<p>useState：管理组件状态</p>
+							<p>useEffect：处理副作用（例如数据获取、订阅）</p>
+							<p>useContext：跨组件共享状态（类似于全局状态管理）</p>
+							<p>useRef：访问DOM元素或持久化状态</p>
+							<h4>4. 理解React生命周期（Class Component）</h4>
+							<p>如果你学习的是类组件（Class Component），理解React组件的生命周期方法是很重要的，特别是componentDidMount、componentDidUpdate、componentWillUnmount等。</p>
+							<h4>5. 学习资源</h4>
+							<p>官方文档：React的官方文档非常全面，适合查阅。</p>
+							<p>教程与课程：有很多免费或付费的React教程、视频课程，可以参考Udemy、Codecademy、YouTube等平台。</p>
+							<p>社区支持：React有非常活跃的开发者社区，加入一些React的论坛、微信群、StackOverflow等，能够帮助你解决遇到的问题。</p>
+							<h4>总结：</h4>
+							<p>学习React是一个渐进的过程，不需要一开始就掌握所有知识。最重要的是从基础开始，逐步深入，动手做项目，解决实际问题。掌握React的核心理念，如组件化、虚拟DOM、状态管理等，能够帮助你更好地理解和使用React。</p>
+							<div class="group-stats">
+                                <span>25名成员</span>
+                                <button class="join-group">加入</button>
+                            </div>
+                        </div>
+                        <!-- 更多小组... -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="JS/tutorial.js"></script>
+</body>
+</html>

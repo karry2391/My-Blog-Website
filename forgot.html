@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>忘记密码 - KaiHub</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/auth.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">KaiHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+    		<li><a href="life.html">生活</a></li>
+    		<li><a href="Music.html">音乐</a></li>
+    		<li><a href="technology.html">技术</a></li>
+    		<li><a href="tutorial.html">教程</a></li>
+            <li><a href="archive.html">归档</a></li>
+            <li><a href="about.html">关于</a></li>
+    		<li><a href="login.html">登录</a></li>
+        </ul>
+    	<div class="search-bar">
+    		<input type="text" placeholder="搜索问题、话题">
+    	</div>
+        <div class="toggle-theme" onclick="toggleTheme()">
+            <span id="theme-icon">🌑</span>
+        </div>
+    </nav>
+
+    <div class="auth-container">
+        <div class="auth-form">
+            <h2>忘记密码</h2>
+            <form id="forgotPasswordForm">
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="邮箱" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="auth-button">发送邮件</button>
+                </div>
+            </form>
+            <div class="auth-links">
+                <span><a href="login.html">登录</a> 或 <a href="register.html">注册</a></span>
+            </div>
+        </div>
+        <div class="auth-footer">
+            © 2024 KaiHub. 保留所有权利。
+        </div>
+    </div>
+
+    <script src="JS/index.js"></script>
+    <script src="JS/auth.js"></script>
+</body>
+</html>

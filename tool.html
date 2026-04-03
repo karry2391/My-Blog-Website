@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工具箱</title>
+    <link rel="stylesheet" href="CSS/index.css">
+	<style>
+		.tool-grid {
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center;
+		}
+		
+		.tool-row {
+		    display: flex;
+		    justify-content: center;
+		    gap: 20px;
+		    margin-bottom: 20px;
+		}
+		
+		.tool-item {
+		    flex: 1;
+		    max-width: 300px;
+		}
+		
+		.tool-image-container {
+		    width: 200px;
+		    height: 150px;
+		    overflow: hidden;
+		}
+		
+		.tool-image {
+		    width: 100%;
+		    height: 100%;
+		    object-fit: contain;
+		}
+	</style>
+</head>
+<body>
+	<!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">KaiHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+			<li><a href="life.html">生活</a></li>
+			<li><a href="Music.html">音乐</a></li>
+			<li><a href="technology.html">技术</a></li>
+			<li><a href="tutorial.html">教程</a></li>
+            <li><a href="archive.html">归档</a></li>
+            <li><a href="about.html">关于</a></li>
+			<li><a href="login.html">登录</a></li>
+        </ul>
+		<div class="search-bar">
+			<input type="text" placeholder="搜索问题、话题">
+		</div>
+        <div class="toggle-theme" onclick="toggleTheme()">
+            <span id="theme-icon">🌑</span>
+        </div>
+    </nav>
+		
+	<div class="content">
+		<!-- 主内容区域 -->
+		<div class="main-content">
+			<div class="tool-grid">
+				<div class="tool-row">
+					<div class="tool-item">
+						<div class="tool-image-container">
+							<img src="Image/Tool/1.png" alt="Tool 1" class="tool-image">
+						</div>
+						<a href="wuziqi.html" class="tool-link">
+						<h3 class="tool-title">五子棋</h3>
+						<p class="tool-description">这是五子棋小游戏</p>
+						</a>
+					</div>
+					<div class="tool-item">
+						<div class="tool-image-container">
+							<img src="Image/Tool/2.png" alt="Tool 2" class="tool-image">
+						</div>
+						<a href="Student_ID.html" class="tool-link">
+						<h3 class="tool-title">学生证生成</h3>
+						<p class="tool-description">这是学生证工具</p>
+						</a>
+					</div>
+					<div class="tool-item">
+						<div class="tool-image-container">
+							<img src="Image/Tool/3.png" alt="Tool 3" class="tool-image">
+						</div>
+						<a href="rubik.html" class="tool-link">
+						<h3 class="tool-title">3D魔方</h3>
+						<p class="tool-description">这是3D魔方小游戏</p>
+						</a>
+					</div>
+					<div class="tool-item">
+						<div class="tool-image-container">
+							<img src="Image/Tool/4.png" alt="Tool 4" class="tool-image">
+						</div>
+						<a href="tower.html" class="tool-link">
+						<h3 class="tool-title">塔块游戏</h3>
+						<p class="tool-description">这是塔块小游戏</p>
+						</a>
+					</div>
+				</div>
+				<div class="tool-row">
+					<div class="tool-item">
+						<div class="tool-image-container">
+							<img src="Image/Tool/5.png" alt="Tool 5" class="tool-image">
+						</div>
+						<a href="pac-man.html" class="tool-link">
+						<h3 class="tool-title">吃豆人</h3>
+						<p class="tool-description">这是吃豆人小游戏</p>
+						</a>
+					</div>
+					<div class="tool-item">
+						<div class="tool-image-container">
+							<img src="Image/Tool/6.png" alt="Tool 6" class="tool-image">
+						</div>
+						<a href="clock.html" class="tool-link">
+						<h3 class="tool-title">动态时钟</h3>
+						<p class="tool-description">这是旋转时钟</p>
+						</a>
+					</div>
+					<div class="tool-item">
+						<div class="tool-image-container">
+							<img src="Image/Tool/7.png" alt="Tool 7" class="tool-image">
+						</div>
+						<a href="compass.html" class="tool-link">
+						<h3 class="tool-title">罗盘</h3>
+						<p class="tool-description">这是旋转罗盘</p>
+						</a>
+					</div>
+					<div class="tool-item">
+						<div class="tool-image-container">
+							<img src="Image/Tool/8.jpg" alt="Tool 8" class="tool-image">
+						</div>
+						<a href="firework.html" class="tool-link">
+						<h3 class="tool-title">烟花</h3>
+						<p class="tool-description">这是鼠标点击放烟花游戏</p>
+						</a>
+					</div>
+				</div>
+				<div class="tool-row">
+					<div class="tool-item">
+						<div class="tool-image-container">
+							<img src="Image/Tool/9.jpg" alt="Tool 9" class="tool-image">
+						</div>
+						<a href="super_mary.html" class="tool-link">
+						<h3 class="tool-title">超级玛丽游戏</h3>
+						<p class="tool-description">这是超级玛丽小游戏</p>
+						</a>
+					</div>
+					<div class="tool-item">
+						<div class="tool-image-container">
+							<img src="Image/Tool/10.jpg" alt="Tool 10" class="tool-image">
+						</div>
+						<a href="lsland.html" class="tool-link">
+						<h3 class="tool-title">冒险岛游戏</h3>
+						<p class="tool-description">这是冒险岛小游戏</p>
+						</a>
+					</div>
+					<div class="tool-item">
+						<div class="tool-image-container">
+							<img src="Image/Tool/11.jpg" alt="Tool 11" class="tool-image">
+						</div>
+						<a href="code_rain.html" class="tool-link">
+						<h3 class="tool-title">黑客帝国代码雨</h3>
+						<p class="tool-description">这是落数字字母代码雨</p>
+						</a>
+					</div>
+					<div class="tool-item">
+						<div class="tool-image-container">
+							<img src="Image/Tool/12.png" alt="Tool 12" class="tool-image">
+						</div>
+						<a href="four_clover.html" class="tool-link">
+						<h3 class="tool-title">四叶草</h3>
+						<p class="tool-description">这是全屏落四叶草</p>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 侧边栏 -->
+		<div class="sidebar">
+			<h3>最新文章</h3>
+			<ul>
+				<li><a href="Page2.html">雷军年度演讲语录</a></li>
+				<li><a href="Page3.html">🐏羊了个羊闯关秘籍</a></li>
+				<li><a href="Page4.html">Github 文件加速下载</a></li>
+			</ul>
+			<h3>分类</h3>
+			<ul>
+				<li><a href="life.html">生活</a></li>
+				<li><a href="tool.html">工具</a></li>
+				<li><a href="technology.html">技术</a></li>
+				<li><a href="tutorial.html">教程</a></li>
+				<li><a href="donate.html">打赏</a></li>
+			</ul>
+			<h3>归档</h3>
+			<ul>
+				<li><a href="archive.html">2024 年 11 月</a></li>
+				<li><a href="archive.html">2024 年 10 月</a></li>
+				<li><a href="404-Page.html">2024 年 9 月</a></li>
+			</ul>
+		</div>
+	</div>
+	
+<script src="JS/index.js"></script>
+</body>
+</html>

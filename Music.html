@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音乐 & 视频 - KaiHub</title>
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/Music.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">KaiHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+    		<li><a href="life.html">生活</a></li>
+    		<li><a href="Music.html">音乐</a></li>
+    		<li><a href="technology.html">技术</a></li>
+    		<li><a href="tutorial.html">教程</a></li>
+            <li><a href="archive.html">归档</a></li>
+            <li><a href="about.html">关于</a></li>
+    		<li><a href="login.html">登录</a></li>
+        </ul>
+    	<div class="search-bar">
+    		<input type="text" placeholder="搜索问题、话题">
+    	</div>
+        <div class="toggle-theme" onclick="toggleTheme()">
+            <span id="theme-icon">🌑</span>
+        </div>
+    </nav>
+
+    <div class="content-container">
+        <!-- 音乐区域 -->
+        <section class="music-section">
+            <h2>音乐收藏</h2>
+            <div class="player-container">
+                <!-- 音乐播放器 -->
+                <div class="music-player">
+                    <div class="player-header">
+                        <img src="Image/music-cover.jpg" alt="封面" class="album-cover" id="albumCover">
+                        <div class="song-info">
+                            <h3 id="songTitle">歌曲标题</h3>
+                            <p id="artistName">歌手名</p>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress" id="musicProgress"></div>
+                    </div>
+                    <div class="time-info">
+                        <span id="currentTime">0:00</span>
+                        <span id="totalTime">0:00</span>
+                    </div>
+                    <div class="controls">
+                        <button class="control-btn" id="prevBtn">
+                            <i class="fas fa-step-backward"></i>
+                        </button>
+                        <button class="control-btn play-btn" id="playBtn">
+                            <i class="fas fa-play"></i>
+                        </button>
+                        <button class="control-btn" id="nextBtn">
+                            <i class="fas fa-step-forward"></i>
+                        </button>
+                        <div class="volume-control">
+                            <i class="fas fa-volume-up"></i>
+                            <input type="range" id="volumeSlider" min="0" max="100" value="100">
+                        </div>
+                    </div>
+                </div>
+                <!-- 音乐列表 -->
+                <div class="music-list">
+                    <h3>播放列表</h3>
+                    <ul id="musicPlaylist">
+                        <!-- 音乐列表项会通过JavaScript动态添加 -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 视频区域 -->
+        <section class="video-section">
+            <h2>视频收藏</h2>
+            <div class="player-container">
+                <!-- 视频播放器 -->
+                <div class="video-player">
+                    <video id="mainVideo" controls poster="Image/M&V/video/银翼杀手2049.jpg">
+                        <source src="" type="video/mp4">
+                        您的浏览器不支持 HTML5 视频播放。
+                    </video>
+                </div>
+                <!-- 视频列表 -->
+                <div class="video-list">
+                    <h3>视频列表</h3>
+                    <ul id="videoPlaylist">
+                        <!-- 视频列表项会通过JavaScript动态添加 -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="JS/index.js"></script>
+    <script src="JS/Music.js"></script>
+</body>
+</html>

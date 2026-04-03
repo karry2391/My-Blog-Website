@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主题切换导航栏</title>
+    <link rel="stylesheet" href="CSS/index.css">
+</head>
+<body>
+	<!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="logo">KaiHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+			<li><a href="life.html">生活</a></li>
+			<li><a href="Music.html">音乐</a></li>
+			<li><a href="technology.html">技术</a></li>
+			<li><a href="tutorial.html">教程</a></li>
+            <li><a href="archive.html">归档</a></li>
+            <li><a href="about.html">关于</a></li>
+			<li><a href="login.html">登录</a></li>
+        </ul>
+		<div class="search-bar">
+			<input type="text" placeholder="搜索问题、话题">
+		</div>
+        <div class="toggle-theme" onclick="toggleTheme()">
+            <span id="theme-icon">🌑</span>
+        </div>
+    </nav>
+	
+	<!-- 主内容区域 -->
+	<div class="content">
+		<div class="main-content">
+			
+			<!-- 示例文章 -->
+			<article>
+			  <div class="article-container">
+				<img src="Image/one.jpg" alt="示例图片" class="article-img" onclick="toggleZoom(this)">
+				<div class="article-content">
+				  <a href="article1.html">
+				  <h2>认识Redis集群</h2>
+				  <p class="content-preview">Redis 集群 是 Redis 提供的一种分布式架构，它通过将数据分散到多个 Redis 节点上来实现数据的分布式存储和高可用性。Redis 集群不仅能够实现数据的水平扩展，还具备故障容错和自动故障迁移的能力，能够有效地应对大规模的数据存储需求。Redis 集群的核心思想是通过将数据分割成多个 哈希槽（Hash Slots） 来分布到不同的节点上，每个节点负责一定数量的哈希槽。当客户端进行读写操作时，Redis 集群能够根据键的哈希值将请求定向到相应的节点进行处理。</p>
+				  </a>
+				  <button class="read-more-btn" onclick="toggleContent(this)">阅读全文</button>
+			
+			      <!-- 点赞功能 -->
+			      <div class="like-section">
+			        <button class="like-btn" onclick="handleLike(this)">👍 点赞</button>
+			        <span class="likes-count">点赞数: 0</span>
+			      </div>
+			
+			      <!-- 评论功能 -->
+			      <div class="comment-section">
+			        <textarea class="comment-input" placeholder="写下你的评论..."></textarea>
+			        <button class="comment-btn" onclick="addComment(this)">发表评论</button>
+			        <ul class="comment-list"></ul>
+			      </div>
+			    </div>
+			  </div>
+			</article>
+
+			<article>
+			  <div class="article-container">
+			    <img src="Image/two.jpg" alt="示例图片" class="article-img" onclick="toggleZoom(this)">
+			    <div class="article-content">
+				  <a href="article2.html">
+			      <h2>爬虫技术——小白入狱案例</h2>
+			      <p class="content-preview">在互联网时代，爬虫（Web Scraping 或 Web Crawling）技术被广泛用于自动化地抓取网站上的信息，尤其在数据分析、内容聚合、搜索引擎优化等领域有着广泛的应用。然而，在实际应用中，使用爬虫技术时如果不小心违反了法律和网站的使用条款，可能会引发法律纠纷甚至严重后果。本文将以“小白入狱案例”为引子，带你了解爬虫的基础知识以及合法使用爬虫的注意事项。</p>
+			      </a>
+				  <button class="read-more-btn" onclick="toggleContent(this)">阅读全文</button>
+			
+			      <!-- 点赞功能 -->
+			      <div class="like-section">
+			        <button class="like-btn" onclick="handleLike(this)">👍 点赞</button>
+			        <span class="likes-count">点赞数: 0</span>
+			      </div>
+			
+			      <!-- 评论功能 -->
+			      <div class="comment-section">
+			        <textarea class="comment-input" placeholder="写下你的评论..."></textarea>
+			        <button class="comment-btn" onclick="addComment(this)">发表评论</button>
+			        <ul class="comment-list"></ul>
+			      </div>
+			    </div>
+			  </div>
+			</article>
+
+			<article>
+			  <div class="article-container">
+				<img src="Image/three.jpg" alt="示例图片" class="article-img" onclick="toggleZoom(this)">
+				<div class="article-content">
+				  <a href="article3.html">
+				  <h2>NAT，软路由，帮你实现校园网上限解锁</h2>
+				  <p class="content-preview">软路由是一种基于软件实现的路由器，与传统的硬件路由器不同，软路由通过安装在普通计算机上的操作系统和路由软件来实现路由功能。软路由通常运行在 Windows 或 Linux 操作系统上，使用专业的路由软件（如 pfSense、OpenWrt、VyOS 等）来提供路由、NAT、防火墙等功能。在一些校园网络中，可能会实施带宽限制、内容封锁或访问控制，导致某些网站或服务不可用。通过结合 NAT 和 软路由 技术，可以帮助用户突破这些限制，实现校园网的“解锁”。</p>
+				  </a>
+				  <button class="read-more-btn" onclick="toggleContent(this)">阅读全文</button>
+			
+			      <!-- 点赞功能 -->
+			      <div class="like-section">
+			        <button class="like-btn" onclick="handleLike(this)">👍 点赞</button>
+			        <span class="likes-count">点赞数: 0</span>
+			      </div>
+			
+			      <!-- 评论功能 -->
+			      <div class="comment-section">
+			        <textarea class="comment-input" placeholder="写下你的评论..."></textarea>
+			        <button class="comment-btn" onclick="addComment(this)">发表评论</button>
+			        <ul class="comment-list"></ul>
+			      </div>
+			    </div>
+			  </div>
+			</article>
+			
+			<article>
+			  <div class="article-container">
+				<img src="Image/four.jpg" alt="示例图片" class="article-img" onclick="toggleZoom(this)">
+				<div class="article-content">
+				  <a href="article4.html">
+				  <h2>《steam恐怖游戏联机推荐》:与朋友一起探索未知的黑暗吧！</h2>
+				  <p class="content-preview">恐怖游戏一直以来都是游戏玩家喜爱的类型之一，尤其是在多人联机的情况下，和朋友一起探索恐怖的未知世界，体验惊悚与刺激的氛围。Steam 平台上有许多优秀的恐怖游戏支持联机合作，能让你与朋友共同面对恐怖的挑战，度过那些让人心跳加速的时刻。如果你和朋友们都喜欢恐怖游戏，并且希望一同分享这些刺激的体验，以下是一些你不可错过的 联机恐怖游戏。</p>
+				  </a>
+				  <button class="read-more-btn" onclick="toggleContent(this)">阅读全文</button>
+			
+			      <!-- 点赞功能 -->
+			      <div class="like-section">
+			        <button class="like-btn" onclick="handleLike(this)">👍 点赞</button>
+			        <span class="likes-count">点赞数: 0</span>
+			      </div>
+			
+			      <!-- 评论功能 -->
+			      <div class="comment-section">
+			        <textarea class="comment-input" placeholder="写下你的评论..."></textarea>
+			        <button class="comment-btn" onclick="addComment(this)">发表评论</button>
+			        <ul class="comment-list"></ul>
+			      </div>
+			    </div>
+			  </div>
+			</article>
+			
+			<article>
+			  <div class="article-container">
+				<img src="Image/five.jpg" alt="示例图片" class="article-img" onclick="toggleZoom(this)">
+				<div class="article-content">
+				  <a href="article5.html">
+				  <h2>Wireshark抓包神器教程-TCP包详解</h2>
+				  <p class="content-preview">Wireshark 是一款功能强大的网络协议分析工具，广泛用于网络故障排查、数据包分析、网络安全等方面。它能够捕获并分析网络中传输的数据包，帮助网络管理员和安全专家了解网络的运行情况。尤其在涉及到网络层（如 TCP/IP 协议）的分析时，Wireshark 提供了非常详细的信息，尤其适用于 TCP 包的分析。TCP（Transmission Control Protocol，传输控制协议）是互联网协议栈中的一个重要协议，它提供可靠、顺序的字节流传输。TCP 包在传输数据时经过三次握手、数据传输和四次挥手等过程，Wireshark 可以帮助我们分析这些过程中的每一个细节。</p>
+				  </a>
+				  <button class="read-more-btn" onclick="toggleContent(this)">阅读全文</button>
+			
+			      <!-- 点赞功能 -->
+			      <div class="like-section">
+			        <button class="like-btn" onclick="handleLike(this)">👍 点赞</button>
+			        <span class="likes-count">点赞数: 0</span>
+			      </div>
+			
+			      <!-- 评论功能 -->
+			      <div class="comment-section">
+			        <textarea class="comment-input" placeholder="写下你的评论..."></textarea>
+			        <button class="comment-btn" onclick="addComment(this)">发表评论</button>
+			        <ul class="comment-list"></ul>
+			      </div>
+			    </div>
+			  </div>
+			</article>
+			
+			<article>
+			  <div class="article-container">
+				<img src="Image/six.jpg" alt="示例图片" class="article-img" onclick="toggleZoom(this)">
+				<div class="article-content">
+				  <a href="article5.html">
+				  <h2>钟馗之眼(Eye of Zhongkui)</h2>
+				  <p class="content-preview">钟馗之眼（Eye of Zhongkui） 是一款广泛用于渗透测试和信息安全分析的工具，通常被安全研究人员和渗透测试人员用于在目标网络中进行漏洞扫描、信息收集以及安全审计。它是基于 Kali Linux 的一种网络安全工具，结合了多个开源的工具和技术，用于发现和分析目标系统中的弱点，帮助安全专业人士识别潜在的安全风险。</p>
+				  </a>
+				  <button class="read-more-btn" onclick="toggleContent(this)">阅读全文</button>
+			
+			      <!-- 点赞功能 -->
+			      <div class="like-section">
+			        <button class="like-btn" onclick="handleLike(this)">👍 点赞</button>
+			        <span class="likes-count">点赞数: 0</span>
+			      </div>
+			
+			      <!-- 评论功能 -->
+			      <div class="comment-section">
+			        <textarea class="comment-input" placeholder="写下你的评论..."></textarea>
+			        <button class="comment-btn" onclick="addComment(this)">发表评论</button>
+			        <ul class="comment-list"></ul>
+			      </div>
+			    </div>
+			  </div>
+			</article>
+		</div>
+		
+		<!-- 侧边栏 -->
+		<div class="sidebar">
+			<h3>最新文章</h3>
+			<ul>
+				<li><a href="Page2.html">雷军年度演讲语录</a></li>
+				<li><a href="Page3.html">🐏羊了个羊闯关秘籍</a></li>
+				<li><a href="Page4.html">Github 文件加速下载</a></li>
+			</ul>
+			<h3>分类</h3>
+			<ul>
+				<li><a href="life.html">生活</a></li>
+				<li><a href="tool.html">工具</a></li>
+				<li><a href="technology.html">技术</a></li>
+				<li><a href="tutorial.html">教程</a></li>
+				<li><a href="donate.html">打赏</a></li>
+			</ul>
+			<h3>归档</h3>
+			<ul>
+				<li><a href="archive.html">2024 年 11 月</a></li>
+				<li><a href="archive.html">2024 年 10 月</a></li>
+				<li><a href="404-Page.html">2024 年 9 月</a></li>
+				<li><a href="404-Page.html">2024 年 8 月</a></li>
+				<li><a href="Page2.html">2024 年 7 月</a></li>
+				<li><a href="Page2.html">2024 年 6 月</a></li>
+				<li><a href="Page2.html">2024 年 5 月</a></li>
+				<li><a href="Page2.html">2024 年 4 月</a></li>
+				<li><a href="404-Page.html">2024 年 3 月</a></li>
+				<li><a href="Page2.html">2024 年 2 月</a></li>
+			</ul>
+		</div>
+	</div>
+	
+<script src="JS/index.js"></script>
+</body>
+</html>
